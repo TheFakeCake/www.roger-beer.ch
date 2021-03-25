@@ -5,11 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>{% block title %}Roger Beer - Ingénieur forestier{% endblock %}</title>
+    <title>{% block page_title %}Roger Beer - Ingénieur forestier{% endblock %}</title>
+    <meta name="description" content="{% block page_description %}{% endblock %}">
 
-    {% block stylesheets %}
+    {%~ block og %}
+        <meta property="og:title" content="{% block og_title %}{{ block('page_title') }}{% endblock %}">
+        <meta property="og:description" content="{% block og_description %}{{ block('page_description') }}{% endblock %}">
+        <meta property="og:type" content="{% block og_type %}website{% endblock %}">
+        <meta property="og:url" content="{% block og_url %}{{ block('canonical_url') }}{% endblock %}">
+        <meta property="og:image" content="{% block og_image %}{# TODO #}{% endblock %}">
+        <meta property="og:image:alt" content="{% block og_image_alt %}{% endblock %}">
+        <meta property="og:locale" content="fr_FR">
+    {%~ endblock %}
+
+    <link rel="canonical" href="{% block canonical_url %}https://www.roger-beer.com{{ path(app.request.attributes.get('_route')) }}{% endblock %}">
+
+    {% block stylesheets -%}
         {{ encore_entry_link_tags('app') }}
-    {% endblock %}
+    {%~ endblock %}
 </head>
 <body>
     {% block body %}{% endblock %}
