@@ -1,4 +1,6 @@
 {
+    "name": "thefakecake/roger-beer.com",
+    "description": "Site web de Roger Beer - Sequoia & Gardens",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "dev",

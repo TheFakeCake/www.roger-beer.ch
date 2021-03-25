@@ -58,6 +58,15 @@ Encore
     // enables Sass/SCSS support
     .enableSassLoader()
 
+    // enables PostCSS support
+    .enablePostCssLoader()
+
+    // copy image assets to public build directory
+    .copyFiles({
+        from: './assets/images',
+        to: 'images/[path][name].[hash:8].[ext]'
+    })
+
     // uncomment if you use TypeScript
     //.enableTypeScriptLoader()
 
