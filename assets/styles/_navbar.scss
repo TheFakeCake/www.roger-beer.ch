@@ -1,0 +1,111 @@
+/**
+ * Custom styling for the Bootstrap Navbar component
+ */
+
+@use 'variables';
+
+// Logo height
+.navbar-brand img {
+    height: variables.$navbar-logo-height;
+}
+
+.navbar-nav {
+    align-items: center;
+
+    &:hover .nav-link.active::after,
+    &:focus-within .nav-link.active::after {
+        transform: scalex(0);
+    }
+
+    .nav-link {
+        position: relative;
+        font-size: 1.5rem;
+        text-decoration: none;
+        display: block;
+        line-height: 4rem;
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            height: 0.125rem;
+            right: variables.$navbar-nav-link-padding-x;
+            left: variables.$navbar-nav-link-padding-x;
+            bottom: 0;
+            background-color: currentcolor;
+            transform: scalex(0);
+            transition: transform 0.25s ease;
+        }
+
+        &.active::after,
+        &.active:hover::after,
+        &.active:focus::after,
+        &:hover::after,
+        &:focus::after {
+            transform: scalex(1);
+        }
+    }
+}
+
+// Resizing the nav-link bottom border element when navbar-nav is in collapsing mode
+.collapsing .navbar-nav,
+.show .navbar-nav {
+    .nav-link::after {
+        left: 0;
+        right: 0;
+    }
+}
+
+.navbar-toggler {
+    width: variables.$navbar-toggler-size;
+    height: variables.$navbar-toggler-size;
+    position: relative;
+
+    .toggler-burger {
+        top: 50%;
+        margin-top: -0.125em;
+
+        &,
+        &:before,
+        &:after {
+            display: block;
+            content: '';
+            position: absolute;
+            width: variables.$navbar-toggler-size - variables.$navbar-toggler-padding-x * 2;
+            height: 0.125em;
+            border-radius: 0.125em;
+            background-color: currentColor;
+            pointer-events: none;
+            transition: transform 0.3s;
+        }
+
+        &:before {
+            top: -0.60em;
+        }
+
+        &:after {
+            top: 0.60em;
+        }
+    }
+}
+
+.navbar-toggler:not(.collapsed) {
+    transform: rotate(180deg);
+
+    .toggler-burger {
+        background-color: transparent;
+
+        &:before,
+        &:after {
+            top: 0;
+        }
+
+        &:before {
+            transform: rotate(135deg);
+        }
+
+        &:after {
+            transform: rotate(-135deg);
+        }
+    }
+}

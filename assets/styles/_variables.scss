@@ -1,0 +1,42 @@
+/**
+ * This file contains variables and Bootstrap variables overrides for customization
+ */
+
+$light-green: #a5c572;
+$dark-green: #244f24;
+$white-green: #f3ffe8;
+$yellow: #fffa3f;
+
+// Boostrap overrides
+$dark: $dark-green;
+$light: $light-green;
+$body-bg: $light;
+$font-family-base: 'Open Sans', sans-serif;
+
+// Navbar
+
+// Custom
+$navbar-logo-height: 6rem;
+$navbar-toggler-size: 3.5rem;
+
+// Bootstrap overrides
+$navbar-padding-y: 0.25rem;
+$navbar-padding-x: 1rem;
+$navbar-nav-link-padding-x: 1rem;
+// $navbar-brand-font-size:            $font-size-lg !default;
+// Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
+// $nav-link-height:                   $font-size-base * $line-height-base + $nav-link-padding-y * 2 !default;
+$navbar-brand-height: 6rem;
+$navbar-brand-padding-y: 0;
+// $navbar-brand-margin-end:           1rem !default;
+$navbar-toggler-padding-y: .75rem;
+$navbar-toggler-padding-x: .75rem;
+// $navbar-toggler-font-size:          $font-size-lg !default;
+$navbar-toggler-border-radius: 50rem;
+// $navbar-toggler-focus-width:        $btn-focus-width !default;
+// $navbar-toggler-transition:         box-shadow .15s ease-in-out !default;
+$navbar-dark-color: $yellow;
+$navbar-dark-hover-color: $yellow;
+// $navbar-dark-active-color: $white;
+// $navbar-dark-toggler-icon-bg:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-dark-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
+// $navbar-dark-toggler-border-color:  rgba($white, .1) !default;

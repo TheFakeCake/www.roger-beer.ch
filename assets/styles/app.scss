@@ -1,0 +1,14 @@
+/**
+ * Main SCSS file
+ */
+
+// Open Sans font
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+@import 'custom-bootstrap';
+
+@import 'navbar';
+
+body {
+    padding-top: $navbar-padding-y * 2 + $navbar-logo-height;
+}

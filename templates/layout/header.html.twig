@@ -1,0 +1,29 @@
+{% set nav_list = {
+    'accueil': 'Accueil',
+    'prestations': 'Prestations',
+    'biographie': 'Qui suis-je',
+    'publications': 'Publications',
+    'contact': 'Contact',
+} -%}
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{{ path('accueil') }}">
+            <img src="{{ asset('build/images/logo-sequoia-and-gardens.svg') }}" alt="{% trans %}Logo de Séquoia & Gardens{% endtrans %}">
+        </a>
+        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsingNavbar" aria-controls="collapsingNavbar" aria-expanded="false" aria-label="{% trans %}Permuter l'affichage du menu de navigation{% endtrans %}">
+            <span class="toggler-burger" aria-hidden="true"></span>
+        </button>
+        <div class="navbar-collapse collapse justify-content-end align-self-end" id="collapsingNavbar">
+            <ul class="navbar-nav">
+                {% for route, label in nav_list %}
+                    <li class="nav-item">
+                        <a class="nav-link {%- if route == app.request.attributes.get('_route') %} active" aria-current="page {%- endif %}" href="{{ path(route) }}">
+                            {{- label|trans -}}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</nav>
