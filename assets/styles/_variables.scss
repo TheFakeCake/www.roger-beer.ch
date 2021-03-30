@@ -4,13 +4,23 @@
 
 $light-green: #a5c572;
 $dark-green: #244f24;
-$white-green: #f3ffe8;
+$offwhite: #f3ffe8;
 $yellow: #fffa3f;
+
+$custom-colors: (
+    'yellow': $yellow,
+    'offwhite': $offwhite
+);
+
+$leaf-card-max-width: 23rem;
+$leaf-card-margin-x-lg: 2rem;
+$leaf-card-margin-x-md: 1rem;
 
 // Boostrap overrides
 $dark: $dark-green;
 $light: $light-green;
 $body-bg: $light;
+$link-color: $yellow;
 $font-family-base: 'Open Sans', sans-serif;
 
 // Navbar

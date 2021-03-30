@@ -9,6 +9,106 @@
 
 @import 'navbar';
 
+:root {
+    --leaf-card-margin-x: #{$leaf-card-margin-x-md};
+}
+
+@media only screen and (min-width: 2000px) {
+    html {
+        font-size: 24px;
+    }
+}
+
+@media only screen and (min-width: 3000px) {
+    html {
+        font-size: 32px;
+    }
+}
+
 body {
     padding-top: $navbar-padding-y * 2 + $navbar-logo-height;
+}
+
+
+/**
+ * Home page title
+ */
+
+.bg-woods {
+    background-image: url('../images/foret-mobile.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+}
+
+.home-title-container {
+    color: $white;
+    max-width: calc(#{$leaf-card-max-width} * 3 + var(--leaf-card-margin-x) * 6);
+    margin: auto;
+    margin-bottom: 3rem;
+    padding-left: var(--leaf-card-margin-x);
+
+    .home-subtitle {
+        max-width: 32rem;
+        font-style: italic;
+        font-size: 1.25rem;
+    }
+}
+
+.leaf-card {
+    position: relative;
+    margin: 0.5rem var(--leaf-card-margin-x);
+    padding: 1rem;
+    border: solid 0.125rem $light-green;
+    border-radius: 0 4rem 0 4rem;
+    background-color: $dark-green;
+    color: $offwhite;
+    text-align: center;
+    transition: transform 0.15s ease;
+
+    &:hover,
+    &:focus-within {
+        transform: scale(1.05);
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .bg-woods {
+        background-image: url('../images/foret.jpg');
+        background-attachment: fixed;
+        background-position: center bottom;
+    }
+
+    .home-title-container {
+        margin-bottom: 6rem;
+    }
+
+    .leaf-card {
+        max-width: 23rem;
+        margin-top: 0;
+        margin-bottom: 0;
+
+        &:nth-of-type(2) {
+            border-radius: 4rem 4rem 0 0;
+        }
+        &:last-of-type {
+            border-radius: 4rem 0 4rem 0;
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    :root {
+        --leaf-card-margin-x: #{$leaf-card-margin-x-lg};
+    }
+
+    .leaf-card {
+        padding: 1.5rem;
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .bg-woods {
+        background-position: center bottom;
+    }
 }
