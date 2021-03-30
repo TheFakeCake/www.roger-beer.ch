@@ -10,6 +10,11 @@
 // Merge the color map
 $theme-colors: map-merge($theme-colors, $custom-colors);
 
+// Add custom spacers
+$spacers: map-merge($spacers, (
+    6: $spacer * 6,
+));
+
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/utilities";
 
