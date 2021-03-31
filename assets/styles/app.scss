@@ -9,6 +9,20 @@
 
 @import 'navbar';
 
+// Mixin for a background image with parallax effect on large device and up
+@mixin parallax-background($image, $position: 'center') {
+    background-image: $image;
+    background-position: $position;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include media-breakpoint-up(lg) {
+        & {
+            background-attachment: fixed;
+        }
+    }
+}
+
 @media only screen and (min-width: 2000px) {
     html {
         font-size: 24px;
@@ -31,10 +45,12 @@ body {
  */
 
 .bg-woods {
-    background-image: url('../images/foret-mobile.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center top;
+    @include parallax-background(url('../images/foret-mobile.jpg'), 'center top');
+
+    @include media-breakpoint-up(md) {
+        background-image: url('../images/foret.jpg');
+        background-position: center bottom;
+    }
 }
 
 .leaf-card {
@@ -54,12 +70,6 @@ body {
 }
 
 @include media-breakpoint-up(md) {
-    .bg-woods {
-        background-image: url('../images/foret.jpg');
-        background-attachment: fixed;
-        background-position: center bottom;
-    }
-
     .leaf-card {
         max-width: 23rem;
 
@@ -80,8 +90,6 @@ body {
     }
 }
 
-@include media-breakpoint-up(xl) {
-    .bg-woods {
-        background-position: center bottom;
-    }
+.bg-bark {
+    @include parallax-background(url('../images/texture-ecorce.jpg'));
 }
