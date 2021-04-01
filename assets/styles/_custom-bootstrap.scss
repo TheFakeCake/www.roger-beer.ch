@@ -15,6 +15,11 @@ $spacers: map-merge($spacers, (
     6: $spacer * 6,
 ));
 
+// Add custom font sizes
+$font-sizes: map-merge($font-sizes, (
+    7: $font-size-base * 0.875,
+));
+
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/utilities";
 

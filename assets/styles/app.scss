@@ -2,6 +2,8 @@
  * Main SCSS file
  */
 
+@use 'sass:map';
+
 // Open Sans font
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
@@ -39,6 +41,10 @@ body {
     padding-top: $navbar-padding-y * 2 + $navbar-logo-height;
 }
 
+.icon {
+    width: 1.5em;
+    height: 1.5em;
+}
 
 /**
  * Home page title
@@ -92,4 +98,24 @@ body {
 
 .bg-bark {
     @include parallax-background(url('../images/texture-ecorce.jpg'));
+}
+
+.footer-contact-btn {
+    display: inline-block;
+    font-size: map.get($font-sizes, 4);
+    text-decoration: none;
+    color: $yellow;
+    padding: 0.25em 1em;
+    border: solid 0.125rem $light-green;
+    border-radius: 0 1em 0 1em;
+    background-color: $dark-green;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+
+    &:hover,
+    &:focus {
+        color: $yellow;
+        background-color: darken($dark-green, 2);
+        transform: scale(1.04);
+    }
 }
