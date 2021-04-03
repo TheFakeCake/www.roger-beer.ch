@@ -17,7 +17,7 @@
         <div class="navbar-collapse collapse justify-content-end align-self-end" id="collapsingNavbar">
             <ul class="navbar-nav">
                 {% for route, label in nav_list %}
-                    <li class="nav-item">
+                    <li class="nav-item" data-animation="fadeInDown">
                         <a class="nav-link {%- if route == app.request.attributes.get('_route') %} active" aria-current="page {%- endif %}" href="{{ path(route) }}">
                             {{- label|trans -}}
                         </a>
