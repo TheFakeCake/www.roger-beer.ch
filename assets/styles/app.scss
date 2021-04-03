@@ -102,20 +102,20 @@ body {
 
 .footer-contact-btn {
     display: inline-block;
-    font-size: map.get($font-sizes, 4);
+    font-size: map.get($font-sizes, 5);
     text-decoration: none;
     color: $yellow;
-    padding: 0.25em 1em;
+    padding: 0.25em 0.75em;
     border: solid 0.125rem $light-green;
     border-radius: 0 1em 0 1em;
-    background-color: $dark-green;
+    background-color: lighten($dark-green, 3);
     transition: background-color 0.2s ease, transform 0.2s ease;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 
     &:hover,
     &:focus {
         color: $yellow;
-        background-color: darken($dark-green, 2);
+        background-color: darken($dark-green, 3);
         transform: scale(1.04);
     }
 }
