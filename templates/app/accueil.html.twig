@@ -4,6 +4,7 @@
 {% block page_description %}{% endblock %}
 
 {% block content %}
+    {# Forest banner #}
     <div class="bg-woods py-4 py-md-5">
         <div class="container-md">
             <h1 class="text-white">
@@ -42,51 +43,69 @@
         </div>
     </div>
 
-    <section class="bg-dark text-offwhite py-4">
+    {# Prestations #}
+    <section class="bg-dark text-offwhite py-4" aria-labelledby="mes-prestations">
         <div class="container-md">
             <div class="row">
                 <div class="col-lg-2">
-                    <h2 class="h4 text-white">Qui suis-je</h2>
+                    <h2 class="h4 text-white" id="mes-prestations">Mes prestations</h2>
                 </div>
-                <div class="col-lg-6 col-xl-7">
-                    <p class="h2 text-white">Roger Beer</p>
+                <div class="col-md-8 col-lg-6 col-xl-7">
+                    <p class="h2 text-white">Ingénieur forestier EPFZ/SIA</p>
                     <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta perspiciatis quo laboriosam dolorem, velit quis voluptas temporibus, est odio, quasi porro cumque iste ad blanditiis. Nihil omnis corrupti excepturi quod.
+                        Vous avez un jardin, vous chérissez vos arbres et arbustes,
+                        vous possédez un lopin de forêt, votre terrasse manque de verdure,
+                        votre entreprise ou votre commune veut développer des actions
+                        en faveur de la protection de l’environnement, les principes
+                        du développement durable vous interpellent ? Nous avons
+                        des points communs et avec <em>Séquoia & Gardens</em>, mon bureau
+                        d’ingénieur forestier EPFZ/SIA consultant, je suis persuadé
+                        de pouvoir vous aider et vous conseiller.
                     </p>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam porro quas quo illum, minima, fuga nobis doloribus ratione sapiente praesentium, ullam omnis recusandae ut unde optio natus iure! Quisquam, voluptates.
+                        Le nom de mon bureau indique que mes interventions concernent
+                        autant les arbres ornementaux et les jardins que les forêts
+                        et l'environnement. Je travaille en partenariat avec le
+                        bureau <em>ECOTEC-ENVIRONNEMENT SA</em> de Genève.
                     </p>
-                    <p>
-                        <a href="{{ path('biographie') }}">En savoir plus à mon sujet</a>
-                    </p>
+                    <a class="d-inline-block mb-3 fs-5" href="{{ path('prestations') }}">En savoir plus sur le rôle de l’ingénieur forestier</a>
                 </div>
-                <div class="col d-flex flex-column justify-content-center">
-                    <img class="mw-100 mx-auto rounded-circle shadow" src="{{ asset('build/images/photo-roger-beer.jpg') }}" alt="Photo de Roger Beer">
+                <div class="col-8 offset-2 col-sm-6 offset-sm-3 col-md-4 offset-md-0 col-xl-3 align-self-center">
+                    <img class="w-100" src="{{ asset('build/images/logo-sequoia-and-gardens.svg') }}"
+                        alt="Logo du bureau d'ingénieur Séquoia & Gardens">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="bg-bark py-4">
+    {# Qui suis-je #}
+    <section class="bg-bark py-4" aria-labelledby="qui-suis-je">
         <div class="container-md">
             <div class="row">
                 <div class="col-lg-2">
-                    <h2 class="h4">Mon métier</h2>
+                    <h2 class="h4" id="qui-suis-je">Qui suis-je</h2>
                 </div>
-                <div class="col-lg-6 col-xl-7">
-                    <p class="h2">Ingénieur forestier</p>
+                <div class="col-md-8 col-lg-6 col-xl-7">
+                    <p class="h2">Roger Beer</p>
                     <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta perspiciatis quo laboriosam dolorem, velit quis voluptas temporibus, est odio, quasi porro cumque iste ad blanditiis. Nihil omnis corrupti excepturi quod.
+                        Après plus de 20 ans à la tête des espaces verts de la Ville
+                        de Genève, mon expérience en matière d’arbres, de forêts,
+                        de paysagisme, d’horticulture et d’environnement est à votre
+                        disposition.
                     </p>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam porro quas quo illum, minima, fuga nobis doloribus ratione sapiente praesentium, ullam omnis recusandae ut unde optio natus iure! Quisquam, voluptates.
+                        En tant que consultant et expert, j’entends apporter un
+                        point de vue original et expérimenté sur les problèmes que
+                        l'on rencontre dans l'entretien d'un jardin, le développement
+                        d'une collection d'arbres, la gestion de la forêt ou des
+                        espaces verts (publics et privés), la création d'un parc
+                        naturel ou les aménagements extérieurs d'une construction
+                        (immeuble ou maison individuelle).
                     </p>
-                    <p>
-                        <a class="link-dark" href="{{ path('prestations') }}">En savoir plus sur mes prestations</a>
-                    </p>
+                    <a class="d-inline-block mb-3 fs-5 link-dark" href="{{ path('biographie') }}">En savoir plus à mon sujet</a>
                 </div>
-                <div class="col d-flex flex-column justify-content-center">
-                    {# <img class="w-100 mx-auto bg-dark shadow rounded-4 px-3 py-2" src="{{ asset('build/images/logo-sequoia-and-gardens.svg') }}" alt="Logo de Séquoi & Gardens"> #}
+                <div class="col-8 offset-2 col-sm-6 offset-sm-3 col-md-4 offset-md-0 col-xl-3 align-self-center">
+                    <img class="mw-100 rounded-circle shadow" src="{{ asset('build/images/photo-roger-beer.jpg') }}" alt="Photo de Roger Beer">
                 </div>
             </div>
         </div>
