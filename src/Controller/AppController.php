@@ -19,7 +19,7 @@ class AppController extends AbstractController
     /**
      * @Route("/prestations", name="prestations")
      */
-    public function prestations(): Reponse
+    public function prestations(): Response
     {
         return $this->render('app/prestations.html.twig');
     }
@@ -27,7 +27,7 @@ class AppController extends AbstractController
     /**
      * @Route("/qui-suis-je", name="biographie")
      */
-    public function biographie(): Reponse
+    public function biographie(): Response
     {
         return $this->render('app/biographie.html.twig');
     }
@@ -43,7 +43,7 @@ class AppController extends AbstractController
     /**
      * @Route("/contact", name="contact")
      */
-    public function contact(): Reponse
+    public function contact(): Response
     {
         return $this->render('app/contact.html.twig');
     }
