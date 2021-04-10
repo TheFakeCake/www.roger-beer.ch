@@ -102,6 +102,25 @@ body {
     @include parallax-background(url('../images/texture-ecorce.jpg'));
 }
 
+/**
+ * Contact info
+ */
+.contact-label {
+    display: inline-block;
+    width: 7em;
+    padding-right: 1em;
+    font-weight: bold;
+    text-align: right;
+}
+
+.contact-address {
+    width: 12em;
+}
+
+.form-label.required::after {
+    content: ' *';
+}
+
 .footer-contact-btn {
     display: inline-block;
     font-size: map.get($font-sizes, 5);

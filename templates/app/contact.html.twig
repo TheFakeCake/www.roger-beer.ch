@@ -3,10 +3,193 @@
 {% block page_title %}{% endblock %}
 {% block page_description %}{% endblock %}
 
+{% form_theme form _self %}
+
+{# Form label with added .form-label class and .required class (if needed) #}
+{% block form_label -%}
+    {%- set label_attr = label_attr|merge({
+        class: (label_attr.class|default('') ~ ' form-label' ~ (required ? ' required'))|trim
+    }) -%}
+
+    <label for="{{ id }}"
+        {%- for key, value in label_attr -%}
+            {{- value is not empty ? (' ' ~ key ~ '="' ~ value ~ '"')|raw -}}
+        {%- endfor -%}
+    >
+        {{- label -}}
+    </label>
+{%- endblock %}
+
+{# Base text form widget with added .form-control class and aria-describedby
+   attribute linked to form_errors (if needed) #}
+{% block text_widget -%}
+    {%- set form_errors_ids = '' -%}
+    {%- for error in errors -%}
+        {%- set form_errors_ids = form_errors_ids ~ ' error_' ~ loop.index0 ~ '_' ~ id -%}
+    {%- endfor -%}
+    {%- set attr = attr|merge({
+        class: (attr.class|default('') ~ ' form-control')|trim,
+        'aria-describedby': (attr['aria-describedby']|default('') ~ form_errors_ids ~ ' feedback_' ~ id)|trim
+    }) -%}
+
+    <input type="{{ type|default('text') }}" name="{{ full_name }}" id="{{ id }}"
+        {%- for key, value in attr -%}
+            {{- value is not empty ? (' ' ~ key ~ '="' ~ value ~ '"')|raw -}}
+        {%- endfor -%}
+        {{- data is not empty ? (' value="' ~ data|escape ~ '"')|raw }}
+        {{- required ? ' required="required"' -}}
+    >
+{%- endblock %}
+
+{# Email form widget. Same as text_widget but with type="email" #}
+{% block email_widget -%}
+    {%- set type = 'email' -%}
+    {%- set attr = attr|merge({ pattern: '[a-zA-Z0-9.!#$%&\'*+\\\\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+' }) -%}
+    {{- block('text_widget') -}}
+{%- endblock %}
+
+{# Tel form widget. Same as text_widget but with type="tel" #}
+{% block tel_widget -%}
+    {%- set type = 'tel' -%}
+    {{- block('text_widget') -}}
+{%- endblock %}
+
+{# Textarea form widget with added .form-control class and aria-describedby
+   attribute linked to form_errors (if needed) #}
+{% block textarea_widget -%}
+    {%- set form_errors_ids = '' -%}
+    {%- for error in errors -%}
+        {%- set form_errors_ids = form_errors_ids ~ ' error_' ~ loop.index0 ~ '_' ~ id -%}
+    {%- endfor -%}
+    {%- set attr = attr|merge({
+        class: (attr.class|default('') ~ ' form-control')|trim,
+        'aria-describedby': (attr['aria-describedby']|default('') ~ form_errors_ids ~ ' feedback_' ~ id)|trim
+    }) -%}
+
+    <textarea name="{{ full_name }}" id="{{ id }}"
+        {%- for key, value in attr -%}
+            {{- value is not empty ? (' ' ~ key ~ '="' ~ value ~ '"')|raw -}}
+        {%- endfor -%}
+        {{- required ? ' required="required"' -}}
+    >
+        {{- data -}}
+    </textarea>
+{%- endblock textarea_widget %}
+
+{# Form errors with .invalid-feedback class and id for proper linking with aria-describedby #}
+{% block form_errors -%}
+    {% for error in errors -%}
+        <div id="error_{{ loop.index0 }}_{{ id }}" class="invalid-feedback">{{ error.message }}</div>
+    {%- endfor %}
+{%- endblock %}
+
+{# Form row #}
+{% block form_row -%}
+    <div
+        {%- for key, value in row_attr -%}
+            {{- value is not empty ? (' ' ~ key ~ '="' ~ value ~ '"')|raw -}}
+        {%- endfor -%}
+    >
+        {{- form_label(form) -}}
+        {{- form_widget(form) -}}
+        {%- if custom_feedback_message is defined -%}
+            <div class="invalid-feedback" id="feedback_{{ id }}">{{ custom_feedback_message }}</div>
+        {%- endif -%}
+    </div>
+{%- endblock %}
+
 {% block content %}
-    <div class="bg-light">
-        <div class="container-md py-4">
-            <h1>Contact</h1>
+    <div class="bg-light py-4 py-md-5">
+        <div class="container-md">
+            <h1>Faites moi part de votre projet</h1>
+            <p>N'hésitez pas à me contacter pour demander un devis.</p>
+
+            {# Form column #}
+            <div class="row gy-4 gx-xxl-5">
+                {{ form_start(form, { action: path('contact'), attr: { id: 'contactForm', class: 'col-md-6' ~ (form.vars.submitted ? ' was-validated'), novalidate: true } }) }}
+                    {%- for message in app.flashes('contactSuccess') %}
+                        <div class="alert alert-success" role="alert">
+                            {{- message -}}
+                        </div>
+                    {%- endfor %}
+                    <div class="row gy-2 gy-sm-3">
+                        {{ form_row(form.firstName, {
+                            row_attr: { class: 'col-sm-6' },
+                            label: 'Prénom',
+                            label_attr: { 'data-animation': 'fadeInDown' },
+                            custom_feedback_message: 'Veuillez saisir votre prénom.',
+                        }) }}
+                        {{ form_row(form.lastName, {
+                            row_attr: { class: 'col-sm-6' },
+                            label: 'Nom',
+                            label_attr: { 'data-animation': 'fadeInDown' },
+                            custom_feedback_message: 'Veuillez saisir votre nom.',
+                        }) }}
+                        {{ form_row(form.email, {
+                            row_attr: { class: 'col-sm-6 col-md-12 col-lg-6' },
+                            label: 'Adresse e-mail',
+                            label_attr: { 'data-animation': 'fadeInDown' },
+                            custom_feedback_message: 'Veuillez saisir une adresse e-mail valide.',
+                        }) }}
+                        {{ form_row(form.phone, {
+                            row_attr: { class: 'col-sm-6 col-md-12 col-lg-6' },
+                            label: 'Téléphone',
+                            label_attr: { 'data-animation': 'fadeInDown' },
+                            custom_feedback_message: 'Veuillez saisir un numéro de téléphone valide.',
+                        }) }}
+                        {{ form_row(form.message, {
+                            row_attr: { class: 'col-12' },
+                            label: 'Message',
+                            label_attr: { 'data-animation': 'fadeInDown' },
+                            attr: { rows: 5 },
+                            custom_feedback_message: 'Veuillez saisir votre message.',
+                        }) }}
+                        {{ form_row(form.send, {
+                            row_attr: { class: 'col-12' },
+                            label: 'Envoyer',
+                            label_attr: { 'data-animation': 'fadeInDown' },
+                            attr: { class: 'footer-contact-btn' },
+                        }) }}
+                    </div>
+                {{ form_end(form) }}
+
+                {# Contact info column #}
+                <div class="col-md-6">
+                    <h2 class="mb-3 text-md-center text-xxl-start">Mes coordonnées</h2>
+
+                    <div class="row justify-content-center gx-xl-0">
+                        <div class="col-auto d-flex">
+                            <div class="contact-label" id="contactAddressLabel">Adresse</div>
+                            <address class="contact-address text-nowrap" aria-labelledby="contactAddressLabel">
+                                <strong>Roger Beer</strong><br>
+                                Séquoia and Gardens<br>
+                                Case postale 262<br>
+                                CH - 1211 Genève 8
+                            </address>
+                        </div>
+                        <div class="col-auto">
+                            <div class="d-flex">
+                                <div class="contact-label" id="contactPhoneLabel">Téléphone</div>
+                                <address class="contact-address phone-number" aria-labelledby="contactPhoneLabel">
+                                    +41 79 213 46 01
+                                </address>
+                            </div>
+                            <div class="d-flex">
+                                <div class="contact-label" id="contactEmailLabel">E-mail</div>
+                                <address class="contact-address" aria-labelledby="contactEmailLabel">
+                                    <a href="mailto:roger.beer@bluewin.ch" class="link-dark">roger.beer@bluewin.ch</a>
+                                </address>
+                            </div>
+                        </div>
+                        <div class="col-12 text-center mt-4">
+                            <a class="link-dark fs-1" href="https://www.facebook.com/" aria-label="Facebook">
+                                {% embed "components/icon.html.twig" with { 'icon': 'facebook', 'title': 'Facebook' } only %}{% endembed  %}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 {% endblock %}
