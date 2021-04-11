@@ -25,6 +25,12 @@ class Contact
      */
     protected $email;
 
+    /**
+     * @Assert\Regex(
+     *     pattern="/^(?:\+?[0-9 ]*[0-9])?$/",
+     *     message="Veuillez saisir un numéro de téléphone valide.",
+     * )
+     */
     protected $phone;
 
     /**

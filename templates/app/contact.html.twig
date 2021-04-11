@@ -151,11 +151,9 @@
                             attr: { rows: 5 },
                             custom_feedback_message: 'Veuillez saisir votre message.',
                         }) }}
-                        {{ form_row(form.send, {
-                            row_attr: { class: 'col-12 col-sm-6' },
-                            label: 'Envoyer',
-                            attr: { class: 'footer-contact-btn w-100' },
-                        }) }}
+                        <div class="col-12 col-sm-6">
+                            <input class="footer-contact-btn w-100" type="submit" role="button" value="Envoyer">
+                        </div>
                     </div>
                 {{ form_end(form) }}
 

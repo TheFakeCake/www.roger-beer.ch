@@ -48,8 +48,7 @@ class AppController extends AbstractController
      */
     public function contact(Request $request): Response
     {
-        $contact = new Contact();
-        $form = $this->createForm(ContactType::class, $contact);
+        $form = $this->createForm(ContactType::class);
 
         $form->handleRequest($request);
 
@@ -63,7 +62,6 @@ class AppController extends AbstractController
 
         return $this->render('app/contact.html.twig', [
             'form' => $form->createView(),
-            'successMessage' => $form
         ]);
     }
 }
