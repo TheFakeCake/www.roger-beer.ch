@@ -99,14 +99,26 @@
 {%- endblock %}
 
 {% block content %}
+    <div class="bg-phone-wood py-4 py-md-5">
+        <div class="container-md">
+            <h1 class="text-white" data-animation="fadeInUp">
+                Faites moi part de votre projet
+            </h1>
+            <p class="text-white fs-5" data-animation="fadeInUp">
+                N'hésitez pas à me contacter pour demander un devis.
+            </p>
+        </div>
+    </div>
     <div class="bg-bark pt-4 py-md-5">
         <div class="container-md">
-            <h1>Faites moi part de votre projet</h1>
-            <p>N'hésitez pas à me contacter pour demander un devis.</p>
-
             {# Form column #}
             <div class="row gy-4 gx-xxl-5">
-                {{ form_start(form, { action: path('contact'), attr: { id: 'contactForm', class: 'col-md-6' ~ (form.vars.submitted ? ' was-validated'), novalidate: true } }) }}
+                {{ form_start(form, { action: path('contact'), attr: {
+                    id: 'contactForm',
+                    class: 'col-md-6' ~ (form.vars.submitted ? ' was-validated'),
+                    novalidate: true,
+                    'aria-label': 'Formulaire de contact',
+                } }) }}
                     {%- for message in app.flashes('contactSuccess') %}
                         <div class="alert alert-success" role="alert">
                             {{- message -}}
@@ -116,39 +128,33 @@
                         {{ form_row(form.firstName, {
                             row_attr: { class: 'col-sm-6' },
                             label: 'Prénom',
-                            label_attr: { 'data-animation': 'fadeInDown' },
                             custom_feedback_message: 'Veuillez saisir votre prénom.',
                         }) }}
                         {{ form_row(form.lastName, {
                             row_attr: { class: 'col-sm-6' },
                             label: 'Nom',
-                            label_attr: { 'data-animation': 'fadeInDown' },
                             custom_feedback_message: 'Veuillez saisir votre nom.',
                         }) }}
                         {{ form_row(form.email, {
                             row_attr: { class: 'col-sm-6 col-md-12 col-lg-6' },
                             label: 'Adresse e-mail',
-                            label_attr: { 'data-animation': 'fadeInDown' },
                             custom_feedback_message: 'Veuillez saisir une adresse e-mail valide.',
                         }) }}
                         {{ form_row(form.phone, {
                             row_attr: { class: 'col-sm-6 col-md-12 col-lg-6' },
                             label: 'Téléphone',
-                            label_attr: { 'data-animation': 'fadeInDown' },
                             custom_feedback_message: 'Veuillez saisir un numéro de téléphone valide.',
                         }) }}
                         {{ form_row(form.message, {
                             row_attr: { class: 'col-12' },
                             label: 'Message',
-                            label_attr: { 'data-animation': 'fadeInDown' },
                             attr: { rows: 5 },
                             custom_feedback_message: 'Veuillez saisir votre message.',
                         }) }}
                         {{ form_row(form.send, {
-                            row_attr: { class: 'col-12' },
+                            row_attr: { class: 'col-12 col-sm-6' },
                             label: 'Envoyer',
-                            label_attr: { 'data-animation': 'fadeInDown' },
-                            attr: { class: 'footer-contact-btn' },
+                            attr: { class: 'footer-contact-btn w-100' },
                         }) }}
                     </div>
                 {{ form_end(form) }}
@@ -158,7 +164,7 @@
                     <h2 class="mb-3 text-md-center text-xxl-start">Mes coordonnées</h2>
 
                     <div class="row justify-content-center gx-xl-0">
-                        <div class="col-auto d-flex">
+                        <div class="col-auto d-flex" data-animation="fadeInUp">
                             <div class="contact-label" id="contactAddressLabel">Adresse</div>
                             <address class="contact-address text-nowrap" aria-labelledby="contactAddressLabel">
                                 <strong>Roger Beer</strong><br>
@@ -167,7 +173,7 @@
                                 CH - 1211 Genève 8
                             </address>
                         </div>
-                        <div class="col-auto">
+                        <div class="col-auto" data-animation="fadeInUp">
                             <div class="d-flex">
                                 <div class="contact-label" id="contactPhoneLabel">Téléphone</div>
                                 <address class="contact-address phone-number" aria-labelledby="contactPhoneLabel">
@@ -181,7 +187,7 @@
                                 </address>
                             </div>
                         </div>
-                        <div class="col-12 text-center mt-4">
+                        <div class="col-12 text-center mt-4" data-animation="fadeInUp">
                             <a class="link-dark fs-1" href="https://www.facebook.com/" aria-label="Facebook">
                                 {% embed "components/icon.html.twig" with { 'icon': 'facebook', 'title': 'Facebook' } only %}{% endembed  %}
                             </a>

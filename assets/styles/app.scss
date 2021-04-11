@@ -102,6 +102,14 @@ body {
     @include parallax-background(url('../images/texture-ecorce.jpg'));
 }
 
+.bg-phone-wood {
+    @include parallax-background(url('../images/telephone-sur-bois-mobile.jpg'), center top);
+
+    @include media-breakpoint-up(md) {
+        background-image: url('../images/telephone-sur-bois.jpg');
+    }
+}
+
 /**
  * Contact info
  */
