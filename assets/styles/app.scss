@@ -13,7 +13,7 @@
 @import 'navbar';
 
 // Mixin for a background image with parallax effect on large device and up
-@mixin parallax-background($image, $position: 'center') {
+@mixin parallax-background($image, $position: center) {
     background-image: $image;
     background-position: $position;
     background-repeat: no-repeat;
@@ -52,7 +52,7 @@ body {
  */
 
 .bg-woods {
-    @include parallax-background(url('../images/foret-mobile.jpg'), 'center top');
+    @include parallax-background(url('../images/foret-mobile.jpg'), center top);
 
     @include media-breakpoint-up(md) {
         background-image: url('../images/foret.jpg');
