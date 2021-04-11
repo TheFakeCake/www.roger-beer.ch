@@ -20,3 +20,5 @@ framework:
         legacy_error_messages: false
 
     validation: { enable_annotations: true }
+
+    csrf_protection: true

@@ -76,10 +76,10 @@
     </textarea>
 {%- endblock textarea_widget %}
 
-{# Form errors with .invalid-feedback class and id for proper linking with aria-describedby #}
+{# Form errors #}
 {% block form_errors -%}
     {% for error in errors -%}
-        <div id="error_{{ loop.index0 }}_{{ id }}" class="invalid-feedback">{{ error.message }}</div>
+        <div class="alert alert-danger">{{ error.message }}</div>
     {%- endfor %}
 {%- endblock %}
 
@@ -119,6 +119,7 @@
                     novalidate: true,
                     'aria-label': 'Formulaire de contact',
                 } }) }}
+                    {{ form_errors(form) }}
                     {%- for message in app.flashes('contactSuccess') %}
                         <div class="alert alert-success" role="alert">
                             {{- message -}}
