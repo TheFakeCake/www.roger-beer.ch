@@ -105,6 +105,26 @@ body {
 /**
  * Contact info
  */
+.contact-info-column {
+    @include media-breakpoint-down(md) {
+        background-color: $dark;
+        color: $light;
+        padding-top: $spacer * 1.5;
+
+        a {
+            $value: $light;
+            color: $value;
+
+            @if $link-shade-percentage != 0 {
+                &:hover,
+                &:focus {
+                    color: if(color-contrast($value) == $color-contrast-light, shade-color($value, $link-shade-percentage), tint-color($value, $link-shade-percentage));
+                }
+            }
+        }
+    }
+}
+
 .contact-label {
     display: inline-block;
     width: 7em;
