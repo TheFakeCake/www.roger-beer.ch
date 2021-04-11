@@ -160,13 +160,13 @@
                 {{ form_end(form) }}
 
                 {# Contact info column #}
-                <div class="col-md-6 contact-info-column">
-                    <h2 class="mb-3 text-md-center text-xxl-start">Mes coordonnées</h2>
+                <section class="col-md-6 contact-info-column" aria-labelledby="contactInfoLabel">
+                    <h2 class="mb-3 text-md-center text-xxl-start" id="contactInfoLabel">Mes coordonnées</h2>
 
                     <div class="row justify-content-center gx-xl-0">
-                        <div class="col-auto d-flex" data-animation="fadeInUp">
+                        <div class="col-auto d-flex" data-animation="fadeInUp" aria-labelledby="contactAddressLabel">
                             <div class="contact-label" id="contactAddressLabel">Adresse</div>
-                            <address class="contact-address text-nowrap" aria-labelledby="contactAddressLabel">
+                            <address class="contact-address text-nowrap">
                                 <strong>Roger Beer</strong><br>
                                 Séquoia and Gardens<br>
                                 Case postale 262<br>
@@ -174,27 +174,27 @@
                             </address>
                         </div>
                         <div class="col-auto" data-animation="fadeInUp">
-                            <div class="d-flex">
+                            <div class="d-flex" aria-labelledby="contactPhoneLabel">
                                 <div class="contact-label" id="contactPhoneLabel">Téléphone</div>
-                                <address class="contact-address phone-number" aria-labelledby="contactPhoneLabel">
+                                <address class="contact-address phone-number">
                                     +41 79 213 46 01
                                 </address>
                             </div>
-                            <div class="d-flex">
+                            <div class="d-flex" aria-labelledby="contactEmailLabel">
                                 <div class="contact-label" id="contactEmailLabel">E-mail</div>
-                                <address class="contact-address" aria-labelledby="contactEmailLabel">
+                                <address class="contact-address">
                                     <a href="mailto:roger.beer@bluewin.ch" class="link-dark">roger.beer@bluewin.ch</a>
                                 </address>
                             </div>
                         </div>
-                        <div class="col-12 text-center mt-4" data-animation="fadeInUp">
+                        <div class="col-12 text-center mt-4" data-animation="fadeInUp" aria-label="Réseaux sociaux">
                             <a class="link-dark fs-1" href="https://www.facebook.com/" aria-label="Facebook">
                                 {% embed "components/icon.html.twig" with { 'icon': 'facebook', 'title': 'Facebook' } only %}{% endembed  %}
                             </a>
                         </div>
                     </div>
                     <hr class="d-md-none" aria-hidden=="true">
-                </div>
+                </section>
 
             </div>
         </div>
