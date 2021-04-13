@@ -153,6 +153,7 @@ body {
 
 .form-label.required::after {
     content: ' *';
+    color: $danger;
 }
 
 .footer-contact-btn {
