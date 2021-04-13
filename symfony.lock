@@ -20,6 +20,9 @@
     "egulias/email-validator": {
         "version": "3.1.1"
     },
+    "isometriks/spam-bundle": {
+        "version": "v1.0.7"
+    },
     "lorenzo/pinky": {
         "version": "1.0.5"
     },

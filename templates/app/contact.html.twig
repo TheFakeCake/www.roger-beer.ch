@@ -126,6 +126,10 @@
                         </div>
                     {%- endfor %}
                     <div class="row gy-2 gy-sm-3">
+                        {#- Honey pot #}
+                        {{ form_widget(form.email_address, {
+                            attr: { tabindex: '-1', autocomplete: 'off' }
+                        }) }}
                         {{ form_row(form.firstName, {
                             row_attr: { class: 'col-sm-6' },
                             label: 'Prénom',

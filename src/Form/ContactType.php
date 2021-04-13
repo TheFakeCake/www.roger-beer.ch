@@ -56,6 +56,11 @@ class ContactType extends AbstractType
         $resolver->setDefaults([
             'data_class' => Contact::class,
             'csrf_message' => 'Le jeton CSRF n\'est pas valable. Merci d\'envoyer à nouveau le formulaire.',
+            'honeypot' => true,
+            'honeypot_field' => 'email_address',
+            'honeypot_use_class' => true,
+            'honeypot_hide_class' => 'contact-email-address-special',
+            'honeypot_message' => 'Le formulaire n\'est pas valide.',
         ]);
     }
 }
