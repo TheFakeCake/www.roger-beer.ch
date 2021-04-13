@@ -55,7 +55,7 @@ class ContactType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Contact::class,
-            'csrf_message' => 'Le jeton CSRF est incorrect. Vous pouvez essayer d\'envoyer à nouveau le formualaire.',
+            'csrf_message' => 'Le jeton CSRF n\'est pas valable. Merci d\'envoyer à nouveau le formulaire.',
         ]);
     }
 }
