@@ -8,7 +8,7 @@
 export function initOnScrollAnimations() {
     const options = {
         root: null,
-        rootMargin: '0px',
+        rootMargin: '4px',
         threshold: 0,
     };
 
@@ -18,14 +18,25 @@ export function initOnScrollAnimations() {
                 const animatedElement = entry.target;
                 const animation = animatedElement.dataset.animation;
 
-                animatedElement.classList.add('animate__animated', 'animate__fast', `animate__${animation}`);
+                // Add a callback at the end of the animation to remove the animated__ classes
+                animatedElement.addEventListener('animationend', (event) => {
+                    event.stopPropagation();
+                    animatedElement.classList.remove('animate__animated', 'animate__fast', `animate__${animation}`);
+                }, { once: true });
+
+                animatedElement.classList.add(`animate__${animation}`);
+
+                // Unobserve the element once it has been animated
+                observer.unobserve(animatedElement);
             }
         });
     };
 
     const observer = new IntersectionObserver(callback, options);
 
+    // Add the first animate.css classes to the animated elements and start observing them
     document.querySelectorAll('[data-animation]').forEach(element => {
+        element.classList.add('animate__animated', 'animate__fast');
         observer.observe(element);
     });
 
