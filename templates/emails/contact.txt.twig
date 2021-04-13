@@ -1,0 +1,18 @@
+{{ contact.fullName }} vous envoi un message depuis www.roger-beer.com
+
+Ses coordonnées :
+
+{{ contact.fullName }}
+{{ contact.email }}
+{% if contact.phone is not empty -%}
+    Tél: {{ contact.phone }}
+{%- endif ~%}
+
+Son Message :
+
+{{ contact.message }}
+
+
+
+---
+E-mail envoyé par www.roger-beer.com

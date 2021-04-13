@@ -1,0 +1,96 @@
+{% extends 'emails/base.html.twig' %}
+
+{% block styles %}
+    <style>
+        .body > tbody {
+            background: #a5c572;
+        }
+        .header,
+        .header .container {
+            background: #244f24;
+        }
+        .header .columns {
+            padding-bottom: 0;
+        }
+        .header .wrapper-inner {
+            padding: 4px;
+        }
+
+        .content > tbody {
+            background: #cadfa9;
+        }
+        .content h1 {
+            font-size: 32px;
+        }
+        .content h2 {
+            font-size: 24px;
+        }
+        .content a {
+            color: #244f24;
+        }
+
+        .footer {
+            background: #a5c572;
+        }
+        .footer p {
+            font-size: 12px;
+        }
+    </style>
+{% endblock %}
+
+{% block content -%}
+    {% apply inky_to_html %}
+        <wrapper class="header">
+            <container>
+                <row class="collapse">
+                    <columns valign="middle">
+                        <center>
+                            <img width="103" height="80" src="{{ email.image('@images/logo-sequoia-and-gardens.svg') }}" role="img" alt="Logo de Séquoia & Gardens" />
+                        </center>
+                    </columns>
+                </row>
+            </container>
+        </wrapper>
+
+
+        <container class="content">
+
+            <spacer size="24"></spacer>
+
+            <row>
+                <columns>
+                    <h1>Nouveau message</h2>
+                    <p class="lead">
+                        <strong>{{ contact.fullName }}</strong> vous envoi un message.
+                    </p>
+                    <h2>Ses coordonnées</h2>
+                    <p>
+                        {{ contact.fullName }}<br />
+                        <a href="mailto:{{ contact.email }}">{{ contact.email }}</a>
+                        {% if contact.phone is not empty %}
+                            <br />Tél: {{ contact.phone }}
+                        {% endif %}
+                    </p>
+                    <h2>Son Message</h2>
+                    <callout>
+                        <p>{{ contact.message|nl2br }}</p>
+                    </callout>
+                </columns>
+            </row>
+
+            <wrapper class="footer">
+                <spacer size="12"></spacer>
+
+                <row>
+                    <columns align="center">
+                        <p class="text-center">
+                            E-mail envoyé par www.roger-beer.com
+                        </p>
+                    </columns>
+                </row>
+            </wrapper>
+
+        </container>
+
+    {% endapply %}
+{%- endblock %}
