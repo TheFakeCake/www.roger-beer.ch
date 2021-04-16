@@ -21,10 +21,10 @@ export function initOnScrollAnimations() {
                 // Add a callback at the end of the animation to remove the animated__ classes
                 animatedElement.addEventListener('animationend', (event) => {
                     event.stopPropagation();
-                    animatedElement.classList.remove('animate__animated', 'animate__fast', `animate__${animation}`);
+                    animatedElement.classList.remove('animated', 'fast', animation);
                 }, { once: true });
 
-                animatedElement.classList.add(`animate__${animation}`);
+                animatedElement.classList.add(animation);
 
                 // Unobserve the element once it has been animated
                 observer.unobserve(animatedElement);
@@ -36,7 +36,7 @@ export function initOnScrollAnimations() {
 
     // Add the first animate.css classes to the animated elements and start observing them
     document.querySelectorAll('[data-animation]').forEach(element => {
-        element.classList.add('animate__animated', 'animate__fast');
+        element.classList.add('animated', 'fast');
         observer.observe(element);
     });
 
