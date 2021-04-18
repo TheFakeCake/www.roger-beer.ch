@@ -18,13 +18,14 @@ export function initOnScrollAnimations() {
                 const animatedElement = entry.target;
                 const animation = animatedElement.dataset.animation;
 
-                // Add a callback at the end of the animation to remove the animated__ classes
+                // Add a callback at the end of the animation to remove the classes
+                // except "annimated"
                 animatedElement.addEventListener('animationend', (event) => {
                     event.stopPropagation();
-                    animatedElement.classList.remove('animated', 'fast', animation);
+                    animatedElement.classList.remove('fast', animation);
                 }, { once: true });
 
-                animatedElement.classList.add(animation);
+                animatedElement.classList.add('animated', 'fast', animation);
 
                 // Unobserve the element once it has been animated
                 observer.unobserve(animatedElement);
@@ -34,9 +35,8 @@ export function initOnScrollAnimations() {
 
     const observer = new IntersectionObserver(callback, options);
 
-    // Add the first animate.css classes to the animated elements and start observing them
+    // Start observing the animated elements
     document.querySelectorAll('[data-animation]').forEach(element => {
-        element.classList.add('animated', 'fast');
         observer.observe(element);
     });
 

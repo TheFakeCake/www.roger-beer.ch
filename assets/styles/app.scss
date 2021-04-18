@@ -26,6 +26,13 @@
     }
 }
 
+@media only screen {
+    // Hide animated elements if javascript is enabled
+    html.js [data-animation*="In"]:not(.animated) {
+        visibility: hidden;
+    }
+}
+
 @media only screen and (min-width: 2000px) {
     html {
         font-size: 24px;

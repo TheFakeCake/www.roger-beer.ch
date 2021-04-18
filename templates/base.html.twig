@@ -21,6 +21,10 @@
 
     <link rel="canonical" href="{% block canonical_url %}https://www.roger-beer.com{{ path(app.request.attributes.get('_route')) }}{% endblock %}">
 
+    <script>
+        document.documentElement.classList.add('js');
+    </script>
+
     {% block stylesheets -%}
         {{ encore_entry_link_tags('app') }}
     {%~ endblock %}
