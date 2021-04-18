@@ -131,8 +131,12 @@ body {
 .contact-info-column {
     @include media-breakpoint-down(md) {
         background-color: $dark;
-        color: $light;
+        color: $offwhite;
         padding-top: $spacer * 1.5;
+
+        h2 {
+            color: $white;
+        }
 
         a {
             $value: $light;
