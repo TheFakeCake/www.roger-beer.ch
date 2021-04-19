@@ -104,7 +104,7 @@
             <h1 class="text-white" data-animation="fadeInUp">
                 Faites moi part de votre projet
             </h1>
-            <p class="text-white fs-5" data-animation="fadeInUp">
+            <p class="text-white fs-5 fst-italic" data-animation="fadeInUp">
                 N'hésitez pas à me contacter pour demander un devis.
             </p>
         </div>
@@ -120,7 +120,7 @@
                     novalidate: true,
                     'aria-label': 'Formulaire de contact',
                 } }) }}
-                    <h2 class="mb-3">Envoyez moi un message</h2>
+                    <h2 class="mb-3" data-animation="fadeInUp">Envoyez moi un message</h2>
                     {{ form_errors(form) }}
                     {%- for message in app.flashes('contactSuccess') %}
                         <div class="alert alert-success" role="alert">
@@ -166,10 +166,10 @@
 
                 {# Contact info column #}
                 <section class="col-md-6 contact-info-column" aria-labelledby="contactInfoLabel">
-                    <h2 class="mb-3 text-md-center text-xxl-start" id="contactInfoLabel">Mes coordonnées</h2>
+                    <h2 class="mb-3 text-md-center text-xxl-start" id="contactInfoLabel" data-animation="fadeInUp">Mes coordonnées</h2>
 
                     <div class="row justify-content-center gx-xl-0">
-                        <div class="col-auto d-flex" data-animation="fadeInUp" aria-labelledby="contactAddressLabel">
+                        <div class="col-auto d-flex" aria-labelledby="contactAddressLabel">
                             <div class="contact-label" id="contactAddressLabel">Adresse</div>
                             <address class="contact-address text-nowrap">
                                 <strong>Roger Beer</strong><br>
@@ -178,7 +178,7 @@
                                 CH - 1211 Genève 8
                             </address>
                         </div>
-                        <div class="col-auto" data-animation="fadeInUp">
+                        <div class="col-auto">
                             <div class="d-flex" aria-labelledby="contactPhoneLabel">
                                 <div class="contact-label" id="contactPhoneLabel">Téléphone</div>
                                 <address class="contact-address phone-number">
@@ -188,11 +188,11 @@
                             <div class="d-flex" aria-labelledby="contactEmailLabel">
                                 <div class="contact-label" id="contactEmailLabel">E-mail</div>
                                 <address class="contact-address">
-                                    <a href="mailto:roger.beer@bluewin.ch" class="link-dark">roger.beer@bluewin.ch</a>
+                                    <a href="mailto:roger.beer@bluewin.ch">roger.beer@bluewin.ch</a>
                                 </address>
                             </div>
                         </div>
-                        <div class="col-12 text-center mt-4" data-animation="fadeInUp" aria-label="Réseaux sociaux">
+                        <div class="col-12 text-center mt-4" aria-label="Réseaux sociaux">
                             <a class="link-dark fs-1" href="https://www.facebook.com/" aria-label="Facebook">
                                 {% embed "components/icon.html.twig" with { 'icon': 'facebook', 'title': 'Facebook' } only %}{% endembed  %}
                             </a>
