@@ -108,6 +108,18 @@ body {
 .bg-bark {
     background-color: $light;
     @include parallax-background(url('../images/texture-ecorce.jpg'));
+
+    a {
+        $value: $dark;
+        color: $value;
+
+        @if $link-shade-percentage != 0 {
+            &:hover,
+            &:focus {
+                color: if(color-contrast($value) == $color-contrast-light, shade-color($value, $link-shade-percentage), tint-color($value, $link-shade-percentage));
+            }
+        }
+    }
 }
 
 .bg-phone-wood {

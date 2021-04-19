@@ -41,11 +41,11 @@ class AppController extends AbstractController
     }
 
     /**
-     * @Route("/publications", name="publications")
+     * @Route("/autres-activites", name="activites")
      */
     public function publications(): Response
     {
-        return $this->render('app/publications.html.twig');
+        return $this->render('app/activites.html.twig');
     }
 
     /**
