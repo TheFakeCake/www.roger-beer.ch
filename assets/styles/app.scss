@@ -106,6 +106,7 @@ body {
 }
 
 .bg-bark {
+    background-color: $light;
     @include parallax-background(url('../images/texture-ecorce.jpg'));
 }
 
