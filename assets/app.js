@@ -12,6 +12,16 @@ var collapseList = collapseElementList.map(function (collapseEl) {
 // Initializing the animations on scroll
 initOnScrollAnimations();
 
+// Deofuscating the email address
+const value = ['r','%','6','F','g','e','r','&','#','4','6',';','&','#','3','7',';','6','2','&','#','3','7',';','6','&#53;%65%7'+'&#50;&#64;'+'&#98;l','ue', '%','7','7','i','&','#','1','1','0',';','&','#','4','6',';','c','h'];
+
+document.querySelectorAll('.contact-email-link').forEach((element) => {
+    const textArea = document.createElement('textarea');
+    textArea.innerHTML = value.join('');
+    element.href = (['m','a','i','l','t','o',':'].join('')) + textArea.value;
+    element.innerHTML = decodeURI(textArea.value);
+});
+
 // Initializing the contact form if it's in the page
 let contactForm = document.getElementById('contactForm');
 
