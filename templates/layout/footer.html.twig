@@ -1,52 +1,49 @@
 <h4 class="mb-3">Discutons de votre projet</h4>
-<div class="row text-light mb-4">
+<div class="row gx-0 text-light mb-4">
 
     {# Contact button column #}
-    <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3 mb-4 mb-sm-0 text-center">
+    <div class="col-sm-6 col-md-4 col-lg-3 text-center text-sm-start mb-4">
         <a class="footer-contact-btn" href="{{ path('contact') }}" data-animation="fadeInUp">Envoyer un message</a>
     </div>
 
-    {# Address column #}
-    <div class="col-12 col-sm-6 col-md-5 order-m2 col-lg-4 order-lg-0 col-xl-3">
-        <div class="row">
-            <div class="col-4 text-end fw-bold" id="footerAddressLabel">
-                Adresse
+    {# Contact info column #}
+    <div class="col-sm-6 col-md-8 col-lg-9">
+        <div class="row justify-content-center justify-content-sm-around gx-xl-0">
+            {# Address column #}
+            <div class="col-auto d-flex">
+                <div class="contact-label" id="footerAddressLabel">
+                    Adresse
+                </div>
+                <div class="contact-address text-nowrap" aria-labelledby="footerAddressLabel">
+                    <address>
+                        <strong>Roger Beer</strong><br>
+                        Séquoia and Gardens<br>
+                        Chemin de la Creuse 5G<br>
+                        CH - 1261 Marchissy (VD)
+                    </address>
+                </div>
             </div>
-            <div class="col-8" aria-labelledby="footerAddressLabel">
-                <address>
-                    <strong>Roger Beer</strong><br>
-                    Séquoia and Gardens<br>
-                    Case postale 262<br>
-                    CH - 1211 Genève 8
-                </address>
+            {# Phone and e-mail column #}
+            <div class="col-auto">
+                <div class="d-flex">
+                    <div class="contact-label" id="footerPhoneLabel">
+                        Téléphone
+                    </div>
+                    <div class="contact-address" aria-labelledby="footerPhoneLabel">
+                        <address class="phone-number">+41 79 213 46 01</address>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="contact-label" id="footerEmailLabel">
+                        E-mail
+                    </div>
+                    <div class="contact-address" aria-labelledby="footerEmailLabel">
+                        <address>
+                            <a href="mailto:roger.beer@bluewin.ch" class="link-light">roger.beer@bluewin.ch</a>
+                        </address>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-
-    {# Phone and e-mail column #}
-    <div class="col-12 col-sm-6 offset-sm-6 col-md-5 offset-md-5 order-md-3 col-lg-4 offset-lg-0 order-lg-0 col-xl-4">
-        <div class="row">
-            <div class="col-4 text-end fw-bold" id="footerPhoneLabel">
-                Téléphone
-            </div>
-            <div class="col-8" aria-labelledby="footerPhoneLabel">
-                <address class="phone-number">+41 79 213 46 01</address>
-            </div>
-            <div class="col-4 text-end fw-bold" id="footerEmailLabel">
-                E-mail
-            </div>
-            <div class="col-8" aria-labelledby="footerEmailLabel">
-                <address>
-                    <a href="mailto: roger.beer@bluewin.ch" class="link-light">roger.beer@bluewin.ch</a>
-                </address>
-            </div>
-        </div>
-    </div>
-
-    {# Social network column #}
-    <div class="col-12 col-sm-4 offset-sm-8 col-md-2 offset-md-0 order-md-1 offset-lg-9 order-lg-0 col-xl-2 offset-xl-0 text-center text-sm-start text-md-center">
-        <a class="link-light fs-1" href="https://www.facebook.com/" aria-label="Facebook">
-            {% embed "components/icon.html.twig" with { 'icon': 'facebook', 'title': 'Facebook' } only %}{% endembed  %}
-        </a>
     </div>
 </div>
