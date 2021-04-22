@@ -11,37 +11,24 @@
         <div class="row justify-content-center justify-content-sm-around gx-xl-0">
             {# Address column #}
             <div class="col-auto d-flex">
-                <div class="contact-label" id="footerAddressLabel">
-                    Adresse
-                </div>
-                <div class="contact-address text-nowrap" aria-labelledby="footerAddressLabel">
-                    <address>
-                        <strong>Roger Beer</strong><br>
-                        Séquoia and Gardens<br>
-                        Chemin de la Creuse 5G<br>
-                        CH - 1261 Marchissy (VD)
-                    </address>
-                </div>
+                <div class="contact-label" id="footerAddressLabel">Adresse</div>
+                <address class="contact-address text-nowrap" aria-labelledby="footerAddressLabel">
+                    {{- block('contact_address', 'app/contact.html.twig') -}}
+                </address>
             </div>
             {# Phone and e-mail column #}
             <div class="col-auto">
                 <div class="d-flex">
-                    <div class="contact-label" id="footerPhoneLabel">
-                        Téléphone
-                    </div>
-                    <div class="contact-address" aria-labelledby="footerPhoneLabel">
-                        <address class="phone-number">+41 79 213 46 01</address>
-                    </div>
+                    <div class="contact-label" id="footerPhoneLabel">Téléphone</div>
+                    <address class="contact-address phone-number" aria-labelledby="footerPhoneLabel">
+                        {{- block('contact_phone_number', 'app/contact.html.twig') -}}
+                    </address>
                 </div>
                 <div class="d-flex">
-                    <div class="contact-label" id="footerEmailLabel">
-                        E-mail
-                    </div>
-                    <div class="contact-address" aria-labelledby="footerEmailLabel">
-                        <address>
-                            <a href="mailto:roger.beer@bluewin.ch" class="link-light">roger.beer@bluewin.ch</a>
-                        </address>
-                    </div>
+                    <div class="contact-label" id="footerEmailLabel">E-mail</div>
+                    <address class="contact-address" aria-labelledby="footerEmailLabel">
+                        {{- block('contact_email', 'app/contact.html.twig') -}}
+                    </address>
                 </div>
             </div>
         </div>

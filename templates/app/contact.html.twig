@@ -172,23 +172,34 @@
                         <div class="col-auto d-flex" aria-labelledby="contactAddressLabel">
                             <div class="contact-label" id="contactAddressLabel">Adresse</div>
                             <address class="contact-address text-nowrap">
-                                <strong>Roger Beer</strong><br>
-                                Séquoia and Gardens<br>
-                                Chemin de la Creuse 5G<br>
-                                CH - 1261 Marchissy (VD)
+                                {% block contact_address -%}
+                                    <strong>Roger Beer</strong><br>
+                                    Séquoia and Gardens<br>
+                                    Chemin de la Creuse 5G<br>
+                                    CH - 1261 Marchissy (VD)
+                                {%- endblock %}
                             </address>
                         </div>
                         <div class="col-auto">
                             <div class="d-flex" aria-labelledby="contactPhoneLabel">
                                 <div class="contact-label" id="contactPhoneLabel">Téléphone</div>
                                 <address class="contact-address phone-number">
-                                    +41 79 213 46 01
+                                    {% block contact_phone_number -%}
+                                        {% set phone_number = '+41 79 213 46 01' %}
+                                        {%- if detector.isMobile -%}
+                                            <a href="tel:{{ phone_number|url_encode }}">{{ phone_number }}</a>
+                                        {%- else -%}
+                                            {{ phone_number }}
+                                        {%- endif -%}
+                                    {%- endblock %}
                                 </address>
                             </div>
                             <div class="d-flex" aria-labelledby="contactEmailLabel">
                                 <div class="contact-label" id="contactEmailLabel">E-mail</div>
                                 <address class="contact-address">
-                                    <a href="mailto:roger.beer@bluewin.ch">roger.beer@bluewin.ch</a>
+                                    {% block contact_email -%}
+                                        <a href="mailto:roger.beer@bluewin.ch">roger.beer@bluewin.ch</a>
+                                    {%- endblock %}
                                 </address>
                             </div>
                         </div>
