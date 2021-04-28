@@ -1,0 +1,24 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block page_title %}Cette page n'existe pas (404){% endblock %}
+{% block page_description %}Cette page n'existe pas (404){% endblock %}
+
+{% block og %}{% endblock %}
+{% block canonical_link %}{% endblock %}
+
+{% block head -%}
+    {{ parent() }}
+    <meta name="robots" content="noindex">
+{% endblock %}
+
+{% block content %}
+    <div class="bg-bark">
+        <div class="container-md py-5">
+            <div class="leaf-card m-auto">
+                <h1 class="h2">Êtes-vous perdu ?</h1>
+                <p class="lead">Cette page n'existe pas.</p>
+                <a class="stretched-link text-yellow fs-5" href="{{ path('accueil') }}">Retour à la page d'accueil</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
