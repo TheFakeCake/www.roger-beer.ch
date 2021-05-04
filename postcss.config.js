@@ -1,5 +1,14 @@
+const purgecss = require ('@fullhuman/postcss-purgecss');
+
 module.exports = {
-    plugins: {
-        autoprefixer: {}
-    }
+    plugins: [
+        purgecss({
+            content: [
+                './templates/**/*.html.twig',
+                './assets/**/*.js',
+                './src/Form/**/*.php',
+            ],
+        }),
+        require('autoprefixer'),
+    ]
 }
