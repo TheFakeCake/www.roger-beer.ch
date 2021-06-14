@@ -7,6 +7,10 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
     Encore.configureRuntimeEnvironment(process.env.NODE_ENV || 'dev');
 }
 
+// Set the NODE_ENV environment variable so it can be used in other configuration
+// files like postcss.config.js
+process.env.NODE_ENV = Encore.isProduction() ? 'production' : 'development';
+
 Encore
     // directory where compiled assets will be stored
     .setOutputPath('public/build/')
