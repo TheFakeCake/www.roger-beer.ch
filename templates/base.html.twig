@@ -25,7 +25,12 @@
     {%- endblock %}
 
     <script>
-        document.documentElement.classList.add('js');
+        {# Set 'window.isMobile' and add the 'js' class to the <html> element
+           if not on mobile and if javascript is enabled -#}
+        window.isMobile = {{ detector.isMobile ? 'true' : 'false' }};
+        if (!window.isMobile) {
+            document.documentElement.classList.add('js');
+        }
     </script>
 
     {% block stylesheets -%}

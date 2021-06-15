@@ -9,8 +9,10 @@ var collapseList = collapseElementList.map(function (collapseEl) {
     return new Collapse(collapseEl, { toggle: false })
 });
 
-// Initializing the animations on scroll
-initOnScrollAnimations();
+// Initializing the animations on scroll if not on mobile
+if (!window.isMobile) {
+    initOnScrollAnimations();
+}
 
 // Deofuscating the email address
 const value = ['r','%','6','F','g','e','r','&','#','4','6',';','&','#','3','7',';','6','2','&','#','3','7',';','6','&#53;%65%7'+'&#50;&#64;'+'&#98;l','ue', '%','7','7','i','&','#','1','1','0',';','&','#','4','6',';','c','h'];
