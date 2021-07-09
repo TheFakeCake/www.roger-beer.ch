@@ -8,7 +8,8 @@ class MobileDetectService
 {
     private MobileDetect $detector;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->detector = new MobileDetect();
     }
 

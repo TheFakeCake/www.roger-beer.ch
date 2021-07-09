@@ -40,7 +40,7 @@ class Contact
 
     public function getFullName(): string
     {
-        return $this->firstName . ' ' . $this->lastName;
+        return $this->firstName.' '.$this->lastName;
     }
 
     public function getFirstName(): string

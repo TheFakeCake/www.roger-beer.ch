@@ -5,10 +5,8 @@ namespace App\Form;
 use App\Entity\Contact;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
@@ -18,12 +16,10 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
  */
 class ContactType extends AbstractType
 {
-    /**
-     * @var ValidatorInterface
-     */
     private ValidatorInterface $validatorService;
 
-    public function __construct(ValidatorInterface $validatorService) {
+    public function __construct(ValidatorInterface $validatorService)
+    {
         $this->validatorService = $validatorService;
     }
 

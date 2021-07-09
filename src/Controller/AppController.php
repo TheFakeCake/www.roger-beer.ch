@@ -59,7 +59,7 @@ class AppController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             /** @var Contact */
-            $contact= $form->getData();
+            $contact = $form->getData();
 
             $mail = (new TemplatedEmail())
                 ->from(new Address('test@test.com', 'www.roger-beer.com'))
