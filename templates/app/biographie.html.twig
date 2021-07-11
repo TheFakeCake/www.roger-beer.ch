@@ -4,34 +4,36 @@
 {% block page_description %}Prenez connaissance du parcours professionnel de Roger Beer depuis sa formation d'ingénieur forestier EPFZ/SIA.{% endblock %}
 
 {% block content %}
-<section class="container-md py-4 py-md-5 text-offwhite">
-    <h1 class="text-white" data-animation="fadeInUp">Qui suis-je</h1>
-    <div class="row">
-        <div class="col-lg-8">
-            <p class="lead text-white" data-animation="fadeInUp">Roger Beer, né en 1956, Suisse (GE/BE)</p>
-            <p>
-                Un ingénieur forestier EPFZ/SIA qui a passé sa vie dans l’administration
-                (Ville de Genève et Etat de Genève) et comme indépendant pendant
-                près de 10 ans (2006-2014).
-            </p>
-            <p>
-                Les arbres, la forêt et le paysagisme comme la protection de l‘environnement
-                ont été mes principaux centres d’intérêt durant toutes ces années.
-            </p>
-            <p>
-                La politique (député au Grand Conseil genevois) et l’engagement
-                associatif ont également occupé une partie de mon temps «&nbsp;libre&nbsp;»
-                (voir mes <a href="{{ path('activites') }}">autres activités</a>).
-            </p>
+<div class="bg-bark">
+    <section class="container-md py-4 py-md-5">
+        <h1 data-animation="fadeInUp">Qui suis-je</h1>
+        <div class="row">
+            <div class="col-lg-8">
+                <p class="lead" data-animation="fadeInUp">Roger Beer, né en 1956, Suisse (GE/BE)</p>
+                <p>
+                    Un ingénieur forestier EPFZ/SIA qui a passé sa vie dans l’administration
+                    (Ville de Genève et Etat de Genève) et comme indépendant pendant
+                    près de 10 ans (2006-2014).
+                </p>
+                <p>
+                    Les arbres, la forêt et le paysagisme comme la protection de l‘environnement
+                    ont été mes principaux centres d’intérêt durant toutes ces années.
+                </p>
+                <p>
+                    La politique (député au Grand Conseil genevois) et l’engagement
+                    associatif ont également occupé une partie de mon temps «&nbsp;libre&nbsp;»
+                    (voir mes <a href="{{ path('activites') }}">autres activités</a>).
+                </p>
+            </div>
+            <div class="col-8 offset-2 col-sm-6 offset-sm-3 col-lg-3 offset-lg-1">
+                <img class="mw-100 rounded-circle shadow " src="{{ asset('build/images/photo-roger-beer.jpg') }}" alt="Photo de Roger Beer">
+            </div>
         </div>
-        <div class="col-8 offset-2 col-sm-6 offset-sm-3 col-lg-3 offset-lg-1">
-            <img class="mw-100 rounded-circle shadow " src="{{ asset('build/images/photo-roger-beer.jpg') }}" alt="Photo de Roger Beer">
-        </div>
-    </div>
-</section>
+    </section>
+</div>
 
 {# Section Parcours professionnel #}
-<div class="bg-bark">
+<div class="bg-dark text-offwhite">
     <section class="container-md py-4">
         <h2 data-animation="fadeInUp">Parcours professionnel</h2>
         <div class="row">
@@ -57,7 +59,7 @@
                 </p>
             </div>
             <div class="col-sm-10 offset-sm-1 col-lg-6 offset-lg-0">
-                <ul class="list-unstyled ps-3 border-start border-dark">
+                <ul class="list-unstyled ps-3 border-start border-offwhite">
                     <li class="d-flex flex-column flex-md-row mb-3">
                         <span class="list-item-date">Dès mai 2021</span>
                         <span>
@@ -132,53 +134,55 @@
     </section>
 </div>
 
-{# Section Forations #}
-<section class="container-md py-3 text-offwhite">
-    <h2 class="text-white" data-animation="fadeInUp">Formations et diplômes</h2>
-    <div class="row">
-        <div class="col-lg-6 mb-3">
-            <p>
-                Une fois mon école obligatoire terminée, j'ai suivi la formation
-                d'Ingénieur forestier de l'<em>École Polytechnique Fédérale de Zurich</em>
-                (EPFZ).
-            </p>
-            <p>
-                Depuis, j'ai régulièrement suivi des formations continues et des
-                cours spécifiques dans les domaines forestier, paysager et environnementaux.
-            </p>
+{# Section Formations #}
+<div class="bg-bark">
+    <section class="container-md py-3">
+        <h2 data-animation="fadeInUp">Formations et diplômes</h2>
+        <div class="row">
+            <div class="col-lg-6 mb-3">
+                <p>
+                    Une fois mon école obligatoire terminée, j'ai suivi la formation
+                    d'Ingénieur forestier de l'<em>École Polytechnique Fédérale de Zurich</em>
+                    (EPFZ).
+                </p>
+                <p>
+                    Depuis, j'ai régulièrement suivi des formations continues et des
+                    cours spécifiques dans les domaines forestier, paysager et environnementaux.
+                </p>
+            </div>
+            <div class="col-sm-10 offset-sm-1 col-lg-6 offset-lg-0">
+                <ul class="list-unstyled ps-3 border-start border-dark">
+                    <li class="d-flex flex-column flex-md-row mb-3">
+                        <span class="list-item-date">2005</span>
+                        <span>
+                            <span class="fw-bold">Certificat de formation continue en développement durable</span><br>
+                            Université de Genève
+                        </span>
+                    </li>
+                    <li class="d-flex flex-column flex-md-row mb-3">
+                        <span class="list-item-date">1986</span>
+                        <span>
+                            <span class="fw-bold">Formation permanente en administration publique</span><br>
+                            Université de Genève, SES
+                        </span>
+                    </li>
+                    <li class="d-flex flex-column flex-md-row mb-3">
+                        <span class="list-item-date">1980</span>
+                        <span>
+                            <span class="fw-bold">Diplôme d’Ingénieur forestier</span> avec brevet d’éligibilité<br>
+                            Ecole Polytechnique Fédérale de Zürich (EPFZ)
+                        </span>
+                    </li>
+                    <li class="d-flex flex-column flex-md-row mb-3">
+                        <span class="list-item-date">1975</span>
+                        <span>
+                            <span class="fw-bold">Maturité A</span>, section classique<br>
+                            Collège Rousseau, Genève
+                        </span>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="col-sm-10 offset-sm-1 col-lg-6 offset-lg-0">
-            <ul class="list-unstyled ps-3 border-start border-offwhite">
-                <li class="d-flex flex-column flex-md-row mb-3">
-                    <span class="list-item-date">2005</span>
-                    <span>
-                        <span class="fw-bold">Certificat de formation continue en développement durable</span><br>
-                        Université de Genève
-                    </span>
-                </li>
-                <li class="d-flex flex-column flex-md-row mb-3">
-                    <span class="list-item-date">1986</span>
-                    <span>
-                        <span class="fw-bold">Formation permanente en administration publique</span><br>
-                        Université de Genève, SES
-                    </span>
-                </li>
-                <li class="d-flex flex-column flex-md-row mb-3">
-                    <span class="list-item-date">1980</span>
-                    <span>
-                        <span class="fw-bold">Diplôme d’Ingénieur forestier</span> avec brevet d’éligibilité<br>
-                        Ecole Polytechnique Fédérale de Zürich (EPFZ)
-                    </span>
-                </li>
-                <li class="d-flex flex-column flex-md-row mb-3">
-                    <span class="list-item-date">1975</span>
-                    <span>
-                        <span class="fw-bold">Maturité A</span>, section classique<br>
-                        Collège Rousseau, Genève
-                    </span>
-                </li>
-            </ul>
-        </div>
-    </div>
-</section>
+    </section>
+</div>
 {% endblock %}
