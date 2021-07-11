@@ -54,6 +54,16 @@ body {
     height: 1.5em;
 }
 
+.text-shadow-sm {
+    text-shadow: 0 0 2px #000;
+}
+.text-shadow {
+    text-shadow: 0 0 4px #000;
+}
+.text-shadow-lg {
+    text-shadow: 0 0 8px #000;
+}
+
 /**
  * Home page title
  */
