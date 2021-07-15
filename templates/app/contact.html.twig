@@ -99,16 +99,16 @@
 {%- endblock %}
 
 {% block content %}
-    <div class="bg-phone-wood py-4 py-md-5 text-white">
-        <section class="container-md">
+    <section class="bg-phone-wood py-4 py-md-5 text-white">
+        <div class="container-md">
             <h1 data-animation="fadeInUp">
                 Faites-moi part de votre projet
             </h1>
             <p class="col-sm-10 col-md-6 fs-5 fst-italic" data-animation="fadeInUp">
                 N'hésitez pas à me contacter pour demander un devis ou un rendez-vous.
             </p>
-        </section>
-    </div>
+        </div>
+    </section>
     <div class="bg-bark pt-4 py-md-5">
         <div class="container-md">
             <div class="row gy-4 gx-xxl-5">
@@ -118,7 +118,6 @@
                     id: 'contactForm',
                     class: 'col-md-6' ~ (form.vars.submitted ? ' was-validated'),
                     novalidate: true,
-                    'aria-label': 'Formulaire de contact',
                 } }) }}
                     <h2 class="mb-3" data-animation="fadeInUp">Envoyez moi un message</h2>
                     {{ form_errors(form) }}
@@ -165,12 +164,12 @@
                 {{ form_end(form) }}
 
                 {# Contact info column #}
-                <section class="col-md-6 contact-info-column" aria-labelledby="contactInfoLabel">
-                    <h2 class="mb-3 text-md-center text-xxl-start" id="contactInfoLabel" data-animation="fadeInUp">Mes coordonnées</h2>
+                <section class="col-md-6 contact-info-column">
+                    <h2 class="mb-3 text-md-center text-xxl-start" data-animation="fadeInUp">Mes coordonnées</h2>
 
                     <div class="row justify-content-center gx-xl-0">
-                        <div class="col-auto d-flex" aria-labelledby="contactAddressLabel">
-                            <div class="contact-label" id="contactAddressLabel">Adresse</div>
+                        <div class="col-auto d-flex">
+                            <div class="contact-label">Adresse</div>
                             <address class="contact-address text-nowrap">
                                 {% block contact_address -%}
                                     <strong>Roger Beer</strong><br>
@@ -181,8 +180,8 @@
                             </address>
                         </div>
                         <div class="col-auto">
-                            <div class="d-flex" aria-labelledby="contactPhoneLabel">
-                                <div class="contact-label" id="contactPhoneLabel">Téléphone</div>
+                            <div class="d-flex">
+                                <div class="contact-label">Téléphone</div>
                                 <address class="contact-address phone-number">
                                     {% block contact_phone_number -%}
                                         {% set phone_number = '+41 79 213 46 01' %}
@@ -194,8 +193,8 @@
                                     {%- endblock %}
                                 </address>
                             </div>
-                            <div class="d-flex" aria-labelledby="contactEmailLabel">
-                                <div class="contact-label" id="contactEmailLabel">E-mail</div>
+                            <div class="d-flex">
+                                <div class="contact-label">E-mail</div>
                                 <address class="contact-address">
                                     {% block contact_email -%}
                                         <a class="contact-email-link" href="#"><noscript>Activez javascript pour voir l'adresse</noscript></a>
@@ -209,7 +208,7 @@
                             </a>
                         </div> #}
                     </div>
-                    <hr class="d-md-none" aria-hidden=="true">
+                    <hr class="d-md-none" role="presentation">
                 </section>
 
             </div>

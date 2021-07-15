@@ -1,4 +1,4 @@
-<h4 class="text-light mb-3">Discutons de votre projet</h4>
+<h2 class="h4 text-light mb-3">Discutons de votre projet</h2>
 <div class="row gx-0 text-light mb-4">
 
     {# Contact button column #}
@@ -11,22 +11,22 @@
         <div class="row justify-content-center justify-content-sm-around gx-xl-0">
             {# Address column #}
             <div class="col-auto d-flex">
-                <div class="contact-label" id="footerAddressLabel">Adresse</div>
-                <address class="contact-address text-nowrap" aria-labelledby="footerAddressLabel">
+                <div class="contact-label">Adresse</div>
+                <address class="contact-address text-nowrap">
                     {{- block('contact_address', 'app/contact.html.twig') -}}
                 </address>
             </div>
             {# Phone and e-mail column #}
             <div class="col-auto">
                 <div class="d-flex">
-                    <div class="contact-label" id="footerPhoneLabel">Téléphone</div>
-                    <address class="contact-address phone-number" aria-labelledby="footerPhoneLabel">
+                    <div class="contact-label">Téléphone</div>
+                    <address class="contact-address phone-number">
                         {{- block('contact_phone_number', 'app/contact.html.twig') -}}
                     </address>
                 </div>
                 <div class="d-flex">
-                    <div class="contact-label" id="footerEmailLabel">E-mail</div>
-                    <address class="contact-address" aria-labelledby="footerEmailLabel">
+                    <div class="contact-label">E-mail</div>
+                    <address class="contact-address">
                         {{- block('contact_email', 'app/contact.html.twig') -}}
                     </address>
                 </div>

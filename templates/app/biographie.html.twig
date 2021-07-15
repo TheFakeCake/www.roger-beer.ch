@@ -4,8 +4,8 @@
 {% block page_description %}Prenez connaissance du parcours professionnel de Roger Beer depuis sa formation d'ingénieur forestier EPFZ/SIA.{% endblock %}
 
 {% block content %}
-<div class="bg-bark">
-    <section class="container-md py-4 py-md-5">
+<section class="bg-bark">
+    <div class="container-md py-4 py-md-5">
         <h1 data-animation="fadeInUp">Qui suis-je</h1>
         <div class="row">
             <div class="col-lg-8">
@@ -29,12 +29,12 @@
                 <img class="mw-100 rounded-circle shadow " src="{{ asset('build/images/photo-roger-beer.jpg') }}" alt="Photo de Roger Beer">
             </div>
         </div>
-    </section>
-</div>
+    </div>
+</section>
 
 {# Section Parcours professionnel #}
-<div class="bg-dark text-offwhite">
-    <section class="container-md py-4">
+<section class="bg-dark text-offwhite">
+    <div class="container-md py-4">
         <h2 data-animation="fadeInUp">Parcours professionnel</h2>
         <div class="row">
             <div class="col-lg-6 mb-3">
@@ -59,6 +59,7 @@
                 </p>
             </div>
             <div class="col-sm-10 offset-sm-1 col-lg-6 offset-lg-0">
+                <h3 class="visually-hidden">Historique de mon parcours professionnel</h3>
                 <ul class="list-unstyled ps-3 border-start border-offwhite">
                     <li class="d-flex flex-column flex-md-row mb-3">
                         <span class="list-item-date">Dès mai 2021</span>
@@ -131,12 +132,12 @@
                 </ul>
             </div>
         </div>
-    </section>
-</div>
+    </div>
+</section>
 
 {# Section Formations #}
-<div class="bg-bark">
-    <section class="container-md py-3">
+<section class="bg-bark">
+    <div class="container-md py-3">
         <h2 data-animation="fadeInUp">Formations et diplômes</h2>
         <div class="row">
             <div class="col-lg-6 mb-3">
@@ -151,6 +152,7 @@
                 </p>
             </div>
             <div class="col-sm-10 offset-sm-1 col-lg-6 offset-lg-0">
+                <h3 class="visually-hidden">Historique des mes formations</h3>
                 <ul class="list-unstyled ps-3 border-start border-dark">
                     <li class="d-flex flex-column flex-md-row mb-3">
                         <span class="list-item-date">2005</span>
@@ -183,6 +185,6 @@
                 </ul>
             </div>
         </div>
-    </section>
-</div>
+    </div>
+</section>
 {% endblock %}

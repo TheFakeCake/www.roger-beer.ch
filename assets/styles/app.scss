@@ -45,6 +45,10 @@
     }
 }
 
+*:focus-visible {
+    outline: solid 1px currentColor;
+}
+
 body {
     min-height: 100vh;
     padding-top: $navbar-padding-y * 2 + $navbar-logo-height;

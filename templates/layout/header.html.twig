@@ -9,13 +9,14 @@
 
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark shadow">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{{ path('accueil') }}">
+        <a class="navbar-brand text-light" href="{{ path('accueil') }}">
             <img src="{{ asset('build/images/logo-sequoia-and-gardens.svg') }}" alt="{% trans %}Logo de Séquoia & Gardens{% endtrans %}" role="img">
         </a>
-        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsingNavbar" aria-controls="collapsingNavbar" aria-expanded="false" aria-label="{% trans %}Permuter l'affichage du menu de navigation{% endtrans %}">
+        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false">
+            <span class="visually-hidden">Permuter l'affichage de la navigation</span>
             <span class="toggler-burger" aria-hidden="true"></span>
         </button>
-        <div class="navbar-collapse collapse justify-content-end align-self-end" id="collapsingNavbar">
+        <div class="navbar-collapse collapse justify-content-end align-self-end" id="mainNav">
             <ul class="navbar-nav">
                 {% for route, label in nav_list %}
                     <li class="nav-item">

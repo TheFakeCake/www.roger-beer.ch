@@ -5,7 +5,7 @@
 
 {% block content %}
     {# Forest banner #}
-    <div class="bg-woods py-4 py-md-5">
+    <section class="bg-woods py-4 py-md-5">
         <div class="container-md">
             <h1 class="text-white text-shadow" data-animation="fadeInUp">
                 <small>Roger Beer</small><br>
@@ -32,23 +32,22 @@
                     </p>
                 </div>
                 <div class="leaf-card" data-animation="fadeInUp">
-                    <div class="h4 text-yellow">Demandez un devis</div>
+                    <div class="h4 text-yellow"><a class="stretched-link" href="{{ path('contact') }}">Demandez un devis</a></div>
                     <p class="m-0">
-                        Vous avez un besoin particulier ?
-                        <a class="stretched-link" href="{{ path('contact') }}">Faites-le moi savoir</a>
+                        Vous avez un besoin particulier ? Faites-le moi savoir
                         et je vous proposerai une solution adaptée.
                     </p>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     {# Prestations #}
-    <section class="bg-dark text-offwhite py-4" aria-labelledby="mes-prestations">
+    <section class="bg-dark text-offwhite py-4">
         <div class="container-md">
             <div class="row">
                 <div class="col-lg-2">
-                    <h2 class="h4 text-white" id="mes-prestations" data-animation="fadeInLeft">Mes prestations</h2>
+                    <h2 class="h4 text-white" data-animation="fadeInLeft">Mes prestations</h2>
                 </div>
                 <div class="col-md-8 col-lg-6 col-xl-7">
                     <p class="h2 text-white">Ingénieur forestier EPFZ/SIA</p>
@@ -79,11 +78,11 @@
     </section>
 
     {# Qui suis-je #}
-    <section class="bg-bark py-4" aria-labelledby="qui-suis-je">
+    <section class="bg-bark py-4">
         <div class="container-md">
             <div class="row">
                 <div class="col-lg-2">
-                    <h2 class="h4" id="qui-suis-je" data-animation="fadeInLeft">Qui suis-je</h2>
+                    <h2 class="h4" data-animation="fadeInLeft">Qui suis-je</h2>
                 </div>
                 <div class="col-md-8 col-lg-6 col-xl-7">
                     <p class="h2">Roger Beer</p>

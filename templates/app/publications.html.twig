@@ -4,19 +4,19 @@
 {% block page_description %}Liste des publications de Roger Beer dans divers revues et journaux concernant la dendrologie, les espaces verts ou ses centres d'intérêt.{% endblock %}
 
 {% block content %}
-<div class="bg-woods text-white text-shadow-lg">
-    <section class="container-md py-4 py-md-5">
+<section class="bg-woods text-white text-shadow-lg">
+    <div class="container-md py-4 py-md-5">
         <h1 data-animation="fadeInUp">Mes publications</h1>
         <p class="col-sm-10 col-md-6 fs-5 fst-italic" data-animation="fadeInUp">
             Durant ma carrière, j'ai rédigé de nombreux articles en rapport avec
             mon activité professionnelle, mais j'ai également écrit concernant
             d'autres domaines.
         </p>
-    </section>
-</div>
+    </div>
+</section>
 
-<div>
-    <section class="container-md py-4">
+<section>
+    <div class="container-md py-4">
         <h2 class="mb-3" data-animation="fadeInUp">Historique de mes publications</h2>
 
         {# {% cache 'publications_cache' %} #}
@@ -49,6 +49,6 @@
                 {% endfor %}
             </div>
         {# {% endcache %} #}
-    </section>
-</div>
+    </div>
+</section>
 {% endblock %}
