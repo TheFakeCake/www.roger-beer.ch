@@ -46,7 +46,10 @@
 }
 
 body {
+    min-height: 100vh;
     padding-top: $navbar-padding-y * 2 + $navbar-logo-height;
+    display: flex;
+    flex-direction: column;
 }
 
 .icon {
@@ -165,7 +168,7 @@ body {
         }
 
         a {
-            $value: $light;
+            $value: $yellow;
             color: $value;
 
             @if $link-shade-percentage != 0 {
