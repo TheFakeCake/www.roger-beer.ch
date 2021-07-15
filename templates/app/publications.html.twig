@@ -1,0 +1,54 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block page_title %}Les publications de Roger Beer, ingénieur forestier EPFZ/SIA{% endblock %}
+{% block page_description %}Liste des publications de Roger Beer dans divers revues et journaux concernant la dendrologie, les espaces verts ou ses centres d'intérêt.{% endblock %}
+
+{% block content %}
+<div class="bg-woods text-white text-shadow-lg">
+    <section class="container-md py-4 py-md-5">
+        <h1 data-animation="fadeInUp">Mes publications</h1>
+        <p class="col-sm-10 col-md-6 fs-5 fst-italic" data-animation="fadeInUp">
+            Durant ma carrière, j'ai rédigé de nombreux articles en rapport avec
+            mon activité professionnelle, mais j'ai également écrit concernant
+            d'autres domaines.
+        </p>
+    </section>
+</div>
+
+<div>
+    <section class="container-md py-4">
+        <h2 class="mb-3" data-animation="fadeInUp">Historique de mes publications</h2>
+
+        {# {% cache 'publications_cache' %} #}
+            <div class="accordion" id="publicationsAccordion">
+                {% for category, publications in publications_in_categories %}
+                    {% set heading_id = 'publicationsHeading' ~ loop.index %}
+                    {% set collapse_id = 'publicationsCollapse' ~ loop.index %}
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="{{ heading_id }}">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#{{ collapse_id }}" aria-expanded="false" aria-controls="{{ collapse_id }}">
+                                {{ category }}
+                            </button>
+                        </h3>
+                        <div id="{{ collapse_id }}" class="accordion-collapse collapse" aria-labelledby="{{ heading_id }}" data-bs-parent="#publicationsAccordion">
+                            <div class="accordion-body bg-bark fs-6">
+                                <ul class="m-0 p-0">
+                                    {%- for publication in publications %}
+                                        {%- set first_col_content = publication.date is defined ? publication.date : publication.author -%}
+                                        {%- set first_col_class = publication.date is defined ? 'publication-date' : 'publication-author' -%}
+
+                                        <li class="d-flex {{ loop.last ? '' : ' mb-3' }}">
+                                            <span class="me-2 {{ first_col_class }}">{{ first_col_content }}</span>
+                                            <p class="col m-0">{{ publication.text }}</p>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {# {% endcache %} #}
+    </section>
+</div>
+{% endblock %}

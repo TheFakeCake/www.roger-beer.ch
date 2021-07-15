@@ -351,6 +351,9 @@
     "tijsverkoyen/css-to-inline-styles": {
         "version": "2.2.3"
     },
+    "twig/cache-extra": {
+        "version": "v3.3.1"
+    },
     "twig/cssinliner-extra": {
         "version": "v3.3.0"
     },

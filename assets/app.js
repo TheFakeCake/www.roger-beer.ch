@@ -8,6 +8,24 @@ if (!window.isMobile) {
     initOnScrollAnimations();
 }
 
+// Add event listeners on Bootstrap accordion to scroll to the top of the
+// accordion item after it's expanded if it's out of the view
+document
+    .querySelectorAll('.accordion-collapse')
+    .forEach((accordionCollapse) => {
+        accordionCollapse.addEventListener('shown.bs.collapse', (e) => {
+            const accordionItem = e.target.parentElement;
+            const navBarHeight = document.querySelector('.navbar').offsetHeight;
+
+            if (accordionItem.offsetTop < window.pageYOffset + navBarHeight) {
+                window.scrollTo(
+                    window.pageXOffset,
+                    e.target.parentElement.offsetTop - navBarHeight
+                );
+            }
+        });
+    });
+
 // Deofuscating the email address
 const value = ['r','%','6','F','g','e','r','&','#','4','6',';','&','#','3','7',';','6','2','&','#','3','7',';','6','&#53;%65%7'+'&#50;&#64;'+'&#98;l','ue', '%','7','7','i','&','#','1','1','0',';','&','#','4','6',';','c','h'];
 

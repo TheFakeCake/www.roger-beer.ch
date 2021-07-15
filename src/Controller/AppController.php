@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Contact;
 use App\Form\ContactType;
+use App\Services\PublicationsService;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\FormError;
@@ -46,6 +47,16 @@ class AppController extends AbstractController
     public function activites(): Response
     {
         return $this->render('app/activites.html.twig');
+    }
+
+    /**
+     * @Route("/publications", name="publications")
+     */
+    public function publications(PublicationsService $publicationsService): Response
+    {
+        return $this->render('app/publications.html.twig', [
+            'publications_in_categories' => $publicationsService->getPublicationsInCategories(),
+        ]);
     }
 
     /**

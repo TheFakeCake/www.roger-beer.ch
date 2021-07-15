@@ -204,6 +204,16 @@ body {
     color: $danger;
 }
 
+/**
+  * Publications
+  */
+.publication-date {
+    width: 3rem;
+}
+.publication-author {
+    width: 7rem;
+}
+
 .footer-contact-btn {
     display: inline-block;
     font-size: map.get($font-sizes, 5);
