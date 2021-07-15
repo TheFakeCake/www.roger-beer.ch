@@ -19,7 +19,7 @@ export function initOnScrollAnimations() {
                 const animation = animatedElement.dataset.animation;
 
                 // Add a callback at the end of the animation to remove the classes
-                // except "annimated"
+                // except "animated"
                 animatedElement.addEventListener('animationend', (event) => {
                     event.stopPropagation();
                     animatedElement.classList.remove('fast', animation);
@@ -35,9 +35,14 @@ export function initOnScrollAnimations() {
 
     const observer = new IntersectionObserver(callback, options);
 
-    // Start observing the animated elements
-    document.querySelectorAll('[data-animation]').forEach(element => {
-        observer.observe(element);
+    // If the animated element is already higher in the page than the view, just
+    // make it visible immediately, else it is observed
+    document.querySelectorAll('[data-animation]').forEach((element) => {
+        if (element.offsetTop < window.pageYOffset) {
+            element.classList.add('animated');
+        } else {
+            observer.observe(element);
+        }
     });
 
     return observer;
