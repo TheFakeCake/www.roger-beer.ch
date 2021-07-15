@@ -32,7 +32,7 @@
                             </button>
                         </h3>
                         <div id="{{ collapse_id }}" class="accordion-collapse collapse" aria-labelledby="{{ heading_id }}" data-bs-parent="#publicationsAccordion">
-                            <div class="accordion-body bg-bark fs-6">
+                            <div class="accordion-body bg-bark fs-6 px-2 px-sm-3">
                                 <ul class="m-0 p-0">
                                     {%- for publication in publications %}
                                         {%- set first_col_content = publication.date is defined ? publication.date : publication.author -%}
