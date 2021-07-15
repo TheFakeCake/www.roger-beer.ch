@@ -43,7 +43,7 @@ class AppController extends AbstractController
     /**
      * @Route("/autres-activites", name="activites")
      */
-    public function publications(): Response
+    public function activites(): Response
     {
         return $this->render('app/activites.html.twig');
     }
