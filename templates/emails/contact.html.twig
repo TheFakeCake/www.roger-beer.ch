@@ -1,43 +1,5 @@
 {% extends 'emails/base.html.twig' %}
 
-{% block styles %}
-    <style>
-        .body > tbody {
-            background: #a5c572;
-        }
-        .header,
-        .header .container {
-            background: #244f24;
-        }
-        .header .columns {
-            padding-bottom: 0;
-        }
-        .header .wrapper-inner {
-            padding: 4px;
-        }
-
-        .content > tbody {
-            background: #cadfa9;
-        }
-        .content h1 {
-            font-size: 32px;
-        }
-        .content h2 {
-            font-size: 24px;
-        }
-        .content a {
-            color: #244f24;
-        }
-
-        .footer {
-            background: #a5c572;
-        }
-        .footer p {
-            font-size: 12px;
-        }
-    </style>
-{% endblock %}
-
 {% block content -%}
     {% apply inky_to_html %}
         <wrapper class="header">
@@ -51,7 +13,6 @@
                 </row>
             </container>
         </wrapper>
-
 
         <container class="content">
 
@@ -84,7 +45,7 @@
                 <row>
                     <columns align="center">
                         <p class="text-center">
-                            E-mail envoyé par www.roger-beer.com
+                            <small>E-mail envoyé par www.roger-beer.com</small>
                         </p>
                     </columns>
                 </row>

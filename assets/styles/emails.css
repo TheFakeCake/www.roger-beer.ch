@@ -1,0 +1,37 @@
+table.body {
+    background: #a5c572;
+}
+
+/* Header */
+
+.header,
+.header .container {
+    background: #244f24;
+}
+.header .columns {
+    padding-bottom: 0;
+}
+.header .wrapper-inner {
+    padding: 4px;
+}
+
+/* Content */
+
+.content {
+    background: #cadfa9 !important;
+}
+.content h1 {
+    font-size: 32px;
+}
+.content h2 {
+    font-size: 24px;
+}
+.content a {
+    color: #244f24;
+}
+
+/* Footer */
+
+.footer {
+    background: #a5c572;
+}
