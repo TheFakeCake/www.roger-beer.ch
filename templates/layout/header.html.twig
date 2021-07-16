@@ -18,13 +18,13 @@
         </button>
         <div class="navbar-collapse collapse justify-content-end align-self-end" id="mainNav">
             <ul class="navbar-nav">
-                {% for route, label in nav_list %}
+                {%~ for route, label in nav_list %}
                     <li class="nav-item">
                         <a class="nav-link {%- if route == app.request.attributes.get('_route') %} active" aria-current="page {%- endif %}" href="{{ path(route) }}">
                             {{- label|trans -}}
                         </a>
                     </li>
-                {% endfor %}
+                {%~ endfor %}
             </ul>
         </div>
     </div>
