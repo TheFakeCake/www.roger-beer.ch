@@ -9,6 +9,7 @@ module.exports = {
                     './assets/**/*.js',
                     './src/Form/**/*.php',
                 ],
+                safelist: ['collapse', 'collapsing', 'show'],
             })
             : null,
         require('autoprefixer'),
