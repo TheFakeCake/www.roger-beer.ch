@@ -157,8 +157,13 @@
                             attr: { rows: 5 },
                             custom_feedback_message: 'Veuillez saisir votre message.',
                         }) }}
-                        <div class="col-12 col-sm-6">
+                        <div class="col-12 col-sm-6 col-md-12 col-lg-6">
                             <input class="btn-leaf w-100" type="submit" role="button" value="Envoyer">
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-12 col-lg-6">
+                            <p class="mb-0 fs-7 text-muted text-center text-sm-start text-md-center text-lg-start">
+                                Aucune donnée personnelle envoyée via ce formulaire ne sera conservée.
+                            </p>
                         </div>
                     </div>
                 {{ form_end(form) }}
