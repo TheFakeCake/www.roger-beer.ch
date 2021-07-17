@@ -29,7 +29,7 @@
 @media only screen {
     // Hide animated elements if javascript is enabled
     html.js [data-animation*="In"]:not(.animated) {
-        @include visually-hidden();
+        opacity: 0;
     }
 }
 
