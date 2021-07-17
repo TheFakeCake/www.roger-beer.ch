@@ -5,3 +5,7 @@ twig:
         '%kernel.project_dir%/assets/images': images
     globals:
         detector: '@App\Services\MobileDetectService'
+
+when@test:
+    twig:
+        strict_variables: true
