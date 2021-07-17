@@ -33,6 +33,10 @@
     }
 }
 
+/**
+ * General styles
+ */
+
 *:focus-visible {
     outline: solid 1px currentColor;
 }
@@ -44,6 +48,9 @@ body {
     flex-direction: column;
 }
 
+/**
+ * Utilities
+ */
 .icon {
     width: 1.5em;
     height: 1.5em;
@@ -59,9 +66,30 @@ body {
     text-shadow: 0 0 8px #000;
 }
 
-/**
- * Home page title
- */
+.bg-bark {
+    background-color: $light;
+    @include parallax-background(url('../images/texture-ecorce.jpg'));
+
+    a {
+        $value: $dark;
+        color: $value;
+
+        @if $link-shade-percentage != 0 {
+            &:hover,
+            &:focus {
+                color: if(color-contrast($value) == $color-contrast-light, shade-color($value, $link-shade-percentage), tint-color($value, $link-shade-percentage));
+            }
+        }
+    }
+}
+
+::selection,
+.bg-light ::selection,
+.bg-bark ::selection {
+    background-color: $dark-green;
+    color: $offwhite;
+    text-shadow: none;
+}
 
 .bg-woods {
     @include parallax-background(url('../images/foret-mobile.jpg'), center top);
@@ -72,6 +100,25 @@ body {
     }
 }
 
+.bg-phone-wood {
+    @include parallax-background(url('../images/telephone-sur-bois-mobile.jpg'), center top);
+
+    @include media-breakpoint-up(md) {
+        background-image: url('../images/telephone-sur-bois.jpg');
+    }
+}
+
+.bg-dark ::selection,
+.bg-woods ::selection,
+.bg-phone-wood ::selection {
+    background-color: $yellow;
+    color: $gray-900;
+    text-shadow: none;
+}
+
+/**
+ * Home page
+ */
 .leaf-card {
     position: relative;
     padding: 1rem;
@@ -118,31 +165,6 @@ body {
 @include media-breakpoint-up(lg) {
     .leaf-card {
         padding: 1.5rem;
-    }
-}
-
-.bg-bark {
-    background-color: $light;
-    @include parallax-background(url('../images/texture-ecorce.jpg'));
-
-    a {
-        $value: $dark;
-        color: $value;
-
-        @if $link-shade-percentage != 0 {
-            &:hover,
-            &:focus {
-                color: if(color-contrast($value) == $color-contrast-light, shade-color($value, $link-shade-percentage), tint-color($value, $link-shade-percentage));
-            }
-        }
-    }
-}
-
-.bg-phone-wood {
-    @include parallax-background(url('../images/telephone-sur-bois-mobile.jpg'), center top);
-
-    @include media-breakpoint-up(md) {
-        background-image: url('../images/telephone-sur-bois.jpg');
     }
 }
 
