@@ -41,6 +41,12 @@
     outline: solid 1px currentColor;
 }
 
+::selection {
+    background-color: transparentize($dark-green, 0.2);
+    color: $white;
+    text-shadow: none;
+}
+
 body {
     min-height: 100vh;
     padding-top: $navbar-padding-y * 2 + $navbar-logo-height;
@@ -83,14 +89,6 @@ body {
     }
 }
 
-::selection,
-.bg-light ::selection,
-.bg-bark ::selection {
-    background-color: $dark-green;
-    color: $offwhite;
-    text-shadow: none;
-}
-
 .bg-woods {
     @include parallax-background(url('../images/foret-mobile.jpg'), center top);
 
@@ -111,8 +109,8 @@ body {
 .bg-dark ::selection,
 .bg-woods ::selection,
 .bg-phone-wood ::selection {
-    background-color: $yellow;
-    color: $gray-900;
+    background-color: transparentize($yellow, 0.2);
+    color: $black;
     text-shadow: none;
 }
 
