@@ -52,6 +52,7 @@ body {
     padding-top: $navbar-padding-y * 2 + $navbar-logo-height;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 /**
