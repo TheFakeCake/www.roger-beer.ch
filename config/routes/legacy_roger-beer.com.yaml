@@ -1,0 +1,142 @@
+# Legacy routes from the old site are kept but permanently redirected to the new
+# pages to help SEO
+
+legacy_index:
+    path: /index/
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: 'accueil'
+        permanent: true
+
+legacy_index_Squoiagardens:
+    path: /index/Squoiagardens
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: 'accueil'
+        permanent: true
+
+legacy_quisuisje_monparcours:
+    path: /quisuisje/monparcours
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: 'biographie'
+        permanent: true
+
+legacy_quisuisje_formation:
+    path: /quisuisje/formation
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: 'biographie'
+        permanent: true
+
+legacy_quisuisje_competences:
+    path: /quisuisje/competences
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: 'prestations'
+        permanent: true
+
+legacy_quisuisje_experience:
+    path: /quisuisje/experience
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: 'biographie'
+        permanent: true
+
+legacy_quisuisje_detailsperso:
+    path: /quisuisje/detailsperso
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: 'biographie'
+        permanent: true
+
+legacy_ingenieurforestier:
+    path: /ingenieurforestier/
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: 'prestations'
+        permanent: true
+
+legacy_ingenieurforestier_Pourqui:
+    path: /ingenieurforestier/Pourqui
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: 'prestations'
+        permanent: true
+
+legacy_ingenieurforestier_pourquoi:
+    path: /ingenieurforestier/pourquoi
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: 'prestations'
+        permanent: true
+
+legacy_ingenieurforestier_developpementdurable:
+    path: /ingenieurforestier/developpementdurable
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: 'prestations'
+        permanent: true
+
+legacy_activitesannexes:
+    path: /activitesannexes/
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: 'activites'
+        permanent: true
+
+legacy_activitesannexes_mesengagements:
+    path: /activitesannexes/mesengagements
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: 'activites'
+        permanent: true
+
+legacy_activitesannexes_associations:
+    path: /activitesannexes/associations
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: 'activites'
+        permanent: true
+
+legacy_activitesannexes_associationsbis:
+    path: /activitesannexes/associationsbis
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: 'activites'
+        permanent: true
+
+legacy_activitesannexes_cequejaifait:
+    path: /activitesannexes/cequejaifait
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: 'activites'
+        permanent: true
+
+legacy_activitesannexes_politique:
+    path: /activitesannexes/politique
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: 'activites'
+        permanent: true
+
+legacy_activitesannexes_loisirs:
+    path: /activitesannexes/loisirs
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: 'activites'
+        permanent: true
+
+legacy_activitesannexes_publications:
+    path: /activitesannexes/publications
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: 'publications'
+        permanent: true
+
+legacy_index_contact:
+    path: /index/contact
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: 'contact'
+        permanent: true
