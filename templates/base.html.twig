@@ -14,13 +14,15 @@
         <meta property="og:description" content="{% block og_description %}{{ block('page_description') }}{% endblock %}">
         <meta property="og:type" content="{% block og_type %}website{% endblock %}">
         <meta property="og:url" content="{% block og_url %}{{ block('canonical_url') }}{% endblock %}">
-        <meta property="og:image" content="{% block og_image %}{{ asset('build/images/logo-opengraph.png') }}{% endblock %}">
+        <meta property="og:image" content="{% block og_image %}{{ absolute_url(asset('build/images/logo-opengraph.png')) }}{% endblock %}">
         <meta property="og:image:alt" content="{% block og_image_alt %}Logo de Séquoia & Gardens{% endblock %}">
         <meta property="og:locale" content="{% block og_locale %}ch_FR{% endblock %}">
     {%~ endblock %}
 
     {% block canonical_link -%}
-        <link rel="canonical" href="{% block canonical_url %}https://www.roger-beer.com{{ path(app.request.attributes.get('_route')) }}{% endblock %}">
+        {% if block('canonical_url') is not empty -%}
+            <link rel="canonical" href="{% block canonical_url %}{{ url(app.request.attributes.get('_route'))|trim('/') }}{% endblock %}">
+        {%- endif %}
     {%- endblock %}
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
