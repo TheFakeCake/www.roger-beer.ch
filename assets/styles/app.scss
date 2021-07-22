@@ -202,6 +202,12 @@ body {
                 }
             }
         }
+
+        ::selection {
+            background-color: transparentize($yellow, 0.2);
+            color: $black;
+            text-shadow: none;
+        }
     }
 }
 
