@@ -1,7 +1,3 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
-
-_legacy:
-    resource: './routes/legacy_roger-beer.com.yaml'
-    type: yaml
