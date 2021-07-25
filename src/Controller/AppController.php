@@ -18,7 +18,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AppController extends AbstractController
 {
     /**
-     * @Route("/", name="accueil")
+     * @Route("/", name="accueil", options={"sitemap" = true})
      */
     public function accueil(): Response
     {
@@ -26,7 +26,7 @@ class AppController extends AbstractController
     }
 
     /**
-     * @Route("/prestations", name="prestations")
+     * @Route("/prestations", name="prestations", options={"sitemap" = true})
      */
     public function prestations(): Response
     {
@@ -34,7 +34,7 @@ class AppController extends AbstractController
     }
 
     /**
-     * @Route("/qui-suis-je", name="biographie")
+     * @Route("/qui-suis-je", name="biographie", options={"sitemap" = true})
      */
     public function biographie(): Response
     {
@@ -42,7 +42,7 @@ class AppController extends AbstractController
     }
 
     /**
-     * @Route("/autres-activites", name="activites")
+     * @Route("/autres-activites", name="activites", options={"sitemap" = true})
      */
     public function activites(): Response
     {
@@ -50,7 +50,7 @@ class AppController extends AbstractController
     }
 
     /**
-     * @Route("/publications", name="publications")
+     * @Route("/publications", name="publications", options={"sitemap" = true})
      */
     public function publications(PublicationsService $publicationsService): Response
     {
@@ -60,7 +60,7 @@ class AppController extends AbstractController
     }
 
     /**
-     * @Route("/contact", name="contact")
+     * @Route("/contact", name="contact", options={"sitemap" = true})
      */
     public function contact(MailerInterface $mailerService, Request $request): Response
     {

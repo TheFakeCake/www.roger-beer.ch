@@ -65,6 +65,9 @@
     "php-cs-fixer/diff": {
         "version": "v2.0.2"
     },
+    "presta/sitemap-bundle": {
+        "version": "v3.0.0"
+    },
     "psr/cache": {
         "version": "1.0.1"
     },
