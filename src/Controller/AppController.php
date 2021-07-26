@@ -93,7 +93,7 @@ class AppController extends AbstractController
             }
             // Else an error is shown
             catch (TransportExceptionInterface $e) {
-                $form->addError(new FormError('Un problème est survenu lors de l\'envoi du message. Si le problème persiste, merci de me contacter directement par e-mail ou téléphone'));
+                $form->addError(new FormError('Un problème est survenu lors de l\'envoi du message. Si le problème persiste, merci de me contacter directement par e-mail ou téléphone.'));
             }
         }
 
