@@ -21,7 +21,7 @@
 
     {% block canonical_link -%}
         {% if block('canonical_url') is not empty -%}
-            <link rel="canonical" href="{% block canonical_url %}{{ url(app.request.attributes.get('_route'))|trim('/') }}{% endblock %}">
+            <link rel="canonical" href="{% block canonical_url %}{{ url(app.request.attributes.get('_route')) }}{% endblock %}">
         {%- endif %}
     {%- endblock %}
 
