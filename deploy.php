@@ -6,10 +6,9 @@ require 'recipe/symfony.php';
 
 // Config
 
-set('application', 'roger-beer.com');
+set('application', 'roger-beer.ch');
 set('repository', 'git@github.com:TheFakeCake/roger-beer.com.git');
 set('assets_build_path', 'public/build/');
-set('env', ['APP_ENV' => 'prod']);
 set('bin/composer', 'composer2');
 set('http_user', function () {
     return run('whoami');
@@ -22,14 +21,14 @@ add('shared_files', ['public/.htaccess']);
 // Hosts
 
 host('staging')
-    ->setHostname('roger-beer.com')
+    ->setHostname('dev.roger-beer.ch')
     ->setDeployPath('~/sites/dev.{{application}}')
     ->setRemoteUser('ht42s_cake')
 ;
 
 host('production')
-    ->setHostname('roger-beer.com')
-    ->setDeployPath('~/sites/{{application}}')
+    ->setHostname('www.roger-beer.ch')
+    ->setDeployPath('~/sites/www.{{application}}')
     ->setRemoteUser('ht42s_cake')
 ;
 
