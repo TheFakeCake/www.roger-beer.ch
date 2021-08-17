@@ -7,9 +7,6 @@
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
 
-// Merge the color map
-$theme-colors: map-merge($theme-colors, $custom-colors);
-
 // Add custom spacers
 $spacers: map-merge($spacers, (
     6: $spacer * 6,
@@ -23,8 +20,29 @@ $font-sizes: map-merge($font-sizes, (
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/utilities";
 
+// Add custom utilities colors
+// https://getbootstrap.com/docs/5.1/customize/color/#generating-utilities
+$utilities: map-merge(
+    $utilities,
+    (
+        "color": map-merge(
+            map-get($utilities, "color"),
+            (
+                values: map-merge(
+                    map-get(map-get($utilities, "color"), "values"),
+                    (
+                        "yellow": $yellow,
+                        "offwhite": $offwhite,
+                    ),
+                ),
+            ),
+        ),
+    )
+);
+
+
 // Layout & components
-// @import "~bootstrap/scss/root";
+@import "~bootstrap/scss/root";
 @import "~bootstrap/scss/reboot";
 @import "~bootstrap/scss/type";
 // @import "~bootstrap/scss/images";
@@ -54,6 +72,7 @@ $font-sizes: map-merge($font-sizes, (
 // @import "~bootstrap/scss/carousel";
 // @import "~bootstrap/scss/spinners";
 // @import "~bootstrap/scss/offcanvas";
+// @import "~bootstrap/scss/placeholders";
 
 // Helpers
 @import "~bootstrap/scss/helpers";
