@@ -72,10 +72,11 @@
     width: variables.$navbar-toggler-size;
     height: variables.$navbar-toggler-size;
     position: relative;
+    border-width: variables.$navbar-toggler-border-width;
 
     .toggler-burger {
         top: 50%;
-        margin-top: -0.125em;
+        margin-top: -0.0625em;
 
         &,
         &:before,
@@ -83,7 +84,7 @@
             display: block;
             content: '';
             position: absolute;
-            width: variables.$navbar-toggler-size - variables.$navbar-toggler-padding-x * 2;
+            width: variables.$navbar-toggler-size - (variables.$navbar-toggler-padding-x + variables.$navbar-toggler-border-width) * 2;
             height: 0.125em;
             border-radius: 0.125em;
             background-color: currentColor;
