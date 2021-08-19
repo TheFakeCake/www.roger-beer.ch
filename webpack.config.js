@@ -77,6 +77,10 @@ Encore
         options.https = {
             pfx: path.join(process.env.HOME, '.symfony/certs/default.p12'),
         }
+
+        // hotfix for webpack-dev-server 4.0.0rc0
+        // https://github.com/symfony/webpack-encore/issues/1017
+        delete options.client.host;
     })
 
     // uncomment if you use TypeScript
