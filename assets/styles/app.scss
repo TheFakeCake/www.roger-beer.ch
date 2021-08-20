@@ -241,6 +241,10 @@ body {
 }
 .publication-author {
     width: 7rem;
+
+    @include media-breakpoint-up(md) {
+        width: 10rem;
+    }
 }
 
 /**
