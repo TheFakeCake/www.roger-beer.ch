@@ -7,7 +7,7 @@ require 'recipe/symfony.php';
 // Config
 
 set('application', 'roger-beer.ch');
-set('repository', 'git@github.com:TheFakeCake/roger-beer.com.git');
+set('repository', 'git@github.com:TheFakeCake/www.roger-beer.ch.git');
 set('assets_build_path', 'public/build/');
 set('bin/composer', 'composer2');
 set('http_user', function () {
