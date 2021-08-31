@@ -34,7 +34,7 @@ class Contact
     protected $phone;
 
     /**
-     * @Assert\NotBlank(message="Vous n'avez pas écrit de message.")
+     * @Assert\NotBlank(message="Veuillez saisir votre message.")
      */
     protected $message;
 

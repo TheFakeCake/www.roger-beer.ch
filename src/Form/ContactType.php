@@ -25,6 +25,8 @@ class ContactType extends AbstractType
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $emailPattern = '[a-zA-Z0-9.!#$%&\'*+\\\\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+';
+
         // Retreive the html regex pattern from the constraint on Contact::$phone
         $phoneConstraintPattern = $this->validatorService
             ->getMetadataFor(Contact::class)
@@ -36,7 +38,11 @@ class ContactType extends AbstractType
         $builder
             ->add('firstName')
             ->add('lastName')
-            ->add('email', EmailType::class)
+            ->add('email', EmailType::class, [
+                'attr' => [
+                    'pattern' => $emailPattern,
+                ],
+            ])
             ->add('phone', TelType::class, [
                 'required' => false,
                 'attr' => [

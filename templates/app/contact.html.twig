@@ -3,100 +3,7 @@
 {% block page_title %}Contacter Roger Beer, ingénieur forestier EPFZ/SIA{% endblock %}
 {% block page_description %}Envoyez un message à Roger Beer ou découvrez ses coordonnées de contact.{% endblock %}
 
-{% form_theme form _self %}
-
-{# Form label with added .form-label class and .required class (if needed) #}
-{% block form_label -%}
-    {%- set label_attr = label_attr|merge({
-        class: (label_attr.class|default('') ~ ' form-label' ~ (required ? ' required'))|trim
-    }) -%}
-
-    <label for="{{ id }}"
-        {%- for key, value in label_attr -%}
-            {{- value is not empty ? (' ' ~ key ~ '="' ~ value ~ '"')|raw -}}
-        {%- endfor -%}
-    >
-        {{- label -}}
-    </label>
-{%- endblock %}
-
-{# Base text form widget with added .form-control class and aria-describedby
-   attribute linked to form_errors (if needed) #}
-{% block text_widget -%}
-    {%- set form_errors_ids = '' -%}
-    {%- for error in errors -%}
-        {%- set form_errors_ids = form_errors_ids ~ ' error_' ~ loop.index0 ~ '_' ~ id -%}
-    {%- endfor -%}
-    {%- set attr = attr|merge({
-        class: (attr.class|default('') ~ ' form-control')|trim,
-        'aria-describedby': (attr['aria-describedby']|default('') ~ form_errors_ids ~ ' feedback_' ~ id)|trim
-    }) -%}
-
-    <input type="{{ type|default('text') }}" name="{{ full_name }}" id="{{ id }}"
-        {%- for key, value in attr -%}
-            {{- value is not empty ? (' ' ~ key ~ '="' ~ value ~ '"')|raw -}}
-        {%- endfor -%}
-        {{- data is not empty ? (' value="' ~ data|escape ~ '"')|raw }}
-        {{- required ? ' required="required"' -}}
-    >
-{%- endblock %}
-
-{# Email form widget. Same as text_widget but with type="email" #}
-{% block email_widget -%}
-    {%- set type = 'email' -%}
-    {%- set attr = attr|merge({ pattern: '[a-zA-Z0-9.!#$%&\'*+\\\\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+' }) -%}
-    {{- block('text_widget') -}}
-{%- endblock %}
-
-{# Tel form widget. Same as text_widget but with type="tel" #}
-{% block tel_widget -%}
-    {%- set type = 'tel' -%}
-    {{- block('text_widget') -}}
-{%- endblock %}
-
-{# Textarea form widget with added .form-control class and aria-describedby
-   attribute linked to form_errors (if needed) #}
-{% block textarea_widget -%}
-    {%- set form_errors_ids = '' -%}
-    {%- for error in errors -%}
-        {%- set form_errors_ids = form_errors_ids ~ ' error_' ~ loop.index0 ~ '_' ~ id -%}
-    {%- endfor -%}
-    {%- set attr = attr|merge({
-        class: (attr.class|default('') ~ ' form-control')|trim,
-        'aria-describedby': (attr['aria-describedby']|default('') ~ form_errors_ids ~ ' feedback_' ~ id)|trim
-    }) -%}
-
-    <textarea name="{{ full_name }}" id="{{ id }}"
-        {%- for key, value in attr -%}
-            {{- value is not empty ? (' ' ~ key ~ '="' ~ value ~ '"')|raw -}}
-        {%- endfor -%}
-        {{- required ? ' required="required"' -}}
-    >
-        {{- data -}}
-    </textarea>
-{%- endblock textarea_widget %}
-
-{# Form errors #}
-{% block form_errors -%}
-    {% for error in errors -%}
-        <div class="alert alert-danger">{{ error.message }}</div>
-    {%- endfor %}
-{%- endblock %}
-
-{# Form row #}
-{% block form_row -%}
-    <div
-        {%- for key, value in row_attr -%}
-            {{- value is not empty ? (' ' ~ key ~ '="' ~ value ~ '"')|raw -}}
-        {%- endfor -%}
-    >
-        {{- form_label(form) -}}
-        {{- form_widget(form) -}}
-        {%- if custom_feedback_message is defined -%}
-            <div class="invalid-feedback" id="feedback_{{ id }}">{{ custom_feedback_message }}</div>
-        {%- endif -%}
-    </div>
-{%- endblock %}
+{% form_theme form 'form/custom_bootstrap_5_layout.html.twig' %}
 
 {% block content %}
     <section class="bg-phone-wood py-5 py-lg-6 text-white text-shadow-lg">
@@ -135,28 +42,28 @@
                         {{ form_row(form.firstName, {
                             row_attr: { class: 'col-sm-6' },
                             label: 'Prénom',
-                            custom_feedback_message: 'Veuillez saisir votre prénom.',
+                            invalid_feedback_message: 'Veuillez saisir votre prénom.',
                         }) }}
                         {{ form_row(form.lastName, {
                             row_attr: { class: 'col-sm-6' },
                             label: 'Nom',
-                            custom_feedback_message: 'Veuillez saisir votre nom.',
+                            invalid_feedback_message: 'Veuillez saisir votre nom.',
                         }) }}
                         {{ form_row(form.email, {
                             row_attr: { class: 'col-sm-6 col-md-12 col-lg-6' },
                             label: 'Adresse e-mail',
-                            custom_feedback_message: 'Veuillez saisir une adresse e-mail valide.',
+                            invalid_feedback_message: 'Veuillez saisir une adresse e-mail valide.',
                         }) }}
                         {{ form_row(form.phone, {
                             row_attr: { class: 'col-sm-6 col-md-12 col-lg-6' },
                             label: 'Téléphone',
-                            custom_feedback_message: 'Veuillez saisir un numéro de téléphone valide.',
+                            invalid_feedback_message: 'Veuillez saisir un numéro de téléphone valide.',
                         }) }}
                         {{ form_row(form.message, {
                             row_attr: { class: 'col-12' },
                             label: 'Message',
                             attr: { rows: 5 },
-                            custom_feedback_message: 'Veuillez saisir votre message.',
+                            invalid_feedback_message: 'Veuillez saisir votre message.',
                         }) }}
                         <div class="col-12 col-sm-6 col-md-12 col-lg-6">
                             <input class="btn-leaf w-100" type="submit" role="button" value="Envoyer">
@@ -208,11 +115,6 @@
                                 </address>
                             </div>
                         </div>
-                        {# <div class="col-12 text-center mt-4" aria-label="Réseaux sociaux">
-                            <a class="link-dark fs-1" href="https://www.facebook.com/" aria-label="Facebook">
-                                {% embed "components/icon.html.twig" with { 'icon': 'facebook', 'title': 'Facebook' } only %}{% endembed  %}
-                            </a>
-                        </div> #}
                     </div>
                     <hr class="d-md-none" role="presentation">
                 </section>

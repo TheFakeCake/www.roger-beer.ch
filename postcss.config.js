@@ -8,6 +8,7 @@ module.exports = {
                     './templates/**/*.html.twig',
                     './assets/**/*.js',
                     './src/Form/**/*.php',
+                    './vendor/symfony/twig-bridge/Resources/views/Form/bootstrap_*.html.twig',
                 ],
                 safelist: ['collapse', 'collapsing', 'show'],
             })
