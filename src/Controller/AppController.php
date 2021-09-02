@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Contact;
 use App\Form\ContactType;
 use App\Services\PublicationsService;
+use Psr\Log\LoggerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\FormError;
@@ -62,7 +63,7 @@ class AppController extends AbstractController
     /**
      * @Route("/contact", name="contact", options={"sitemap" = true})
      */
-    public function contact(MailerInterface $mailerService, Request $request): Response
+    public function contact(LoggerInterface $logger, MailerInterface $mailerService, Request $request): Response
     {
         $form = $this->createForm(ContactType::class);
 
@@ -70,8 +71,9 @@ class AppController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             // If honeypot is filled, return success without sending the email
-            $honeypotValue = $form->get('email_address')->getData();
-            if (null !== $honeypotValue) {
+            if (null !== $form->get('email_address')->getData()) {
+                $logger->warning('Contact form submitted with filled honeypot');
+
                 return $this->contactSuccess();
             }
             /** @var Contact */
