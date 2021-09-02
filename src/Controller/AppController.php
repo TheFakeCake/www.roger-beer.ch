@@ -80,7 +80,6 @@ class AppController extends AbstractController
             $mail = (new TemplatedEmail())
                 ->from(new Address('webmaster@roger-beer.ch', 'www.roger-beer.ch'))
                 ->to(new Address('roger.beer@bluewin.ch', 'Roger Beer'))
-                ->replyTo(new Address($contact->getEmail(), $contact->getFUllName()))
                 ->subject("Nouveau message de la part de {$contact->getFullName()}")
                 ->htmlTemplate('emails/contact.html.twig')
                 ->textTemplate('emails/contact.txt.twig')
