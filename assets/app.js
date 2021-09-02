@@ -58,7 +58,7 @@ if (contactForm) {
 
     // On blur callbacks to trim text inputs
     contactForm
-        .querySelectorAll('input[type="text"], input[type="email"], input[type="tel"]')
+        .querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], textarea')
         .forEach(input => {
             input.addEventListener('blur', (e) => {
                 e.target.value = e.target.value.trim()
