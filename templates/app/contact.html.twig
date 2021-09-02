@@ -35,10 +35,6 @@
                         </div>
                     {%- endfor %}
                     <div class="row gy-2 gy-sm-3">
-                        {#- Honey pot #}
-                        {{ form_widget(form.email_address, {
-                            attr: { tabindex: '-1', autocomplete: 'off' }
-                        }) }}
                         {{ form_row(form.firstName, {
                             row_attr: { class: 'col-sm-6' },
                             label: 'Prénom',
@@ -49,6 +45,8 @@
                             label: 'Nom',
                             invalid_feedback_message: 'Veuillez saisir votre nom.',
                         }) }}
+                        {#- Honeypot field #}
+                        {{ form_row(form.email_address) }}
                         {{ form_row(form.email, {
                             row_attr: { class: 'col-sm-6 col-md-12 col-lg-6' },
                             label: 'Adresse e-mail',

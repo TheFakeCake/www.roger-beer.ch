@@ -50,6 +50,21 @@ class ContactType extends AbstractType
                 ],
             ])
             ->add('message', TextareaType::class)
+
+            // This is the honeypot field
+            ->add('email_address', EmailType::class, [
+                'mapped' => false,
+                'required' => false,
+                'label' => 'Adresse e-mail',
+                'attr' => [
+                    'tabindex' => '-1',
+                    'autocomplete' => 'off',
+                ],
+                'row_attr' => [
+                    'class' => 'contact-email-address',
+                    'aria-hidden' => 'true',
+                ],
+            ])
         ;
     }
 
@@ -58,11 +73,6 @@ class ContactType extends AbstractType
         $resolver->setDefaults([
             'data_class' => Contact::class,
             'csrf_message' => 'Le jeton CSRF n\'est pas valable. Merci d\'envoyer à nouveau le formulaire.',
-            'honeypot' => true,
-            'honeypot_field' => 'email_address',
-            'honeypot_use_class' => true,
-            'honeypot_hide_class' => 'contact-email-address-special',
-            'honeypot_message' => 'Le formulaire n\'est pas valide.',
         ]);
     }
 }

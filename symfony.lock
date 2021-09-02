@@ -44,9 +44,6 @@
             ".php-cs-fixer.dist.php"
         ]
     },
-    "isometriks/spam-bundle": {
-        "version": "v1.0.7"
-    },
     "lorenzo/pinky": {
         "version": "1.0.5"
     },

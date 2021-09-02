@@ -69,6 +69,11 @@ class AppController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            // If honeypot is filled, return success without sending the email
+            $honeypotValue = $form->get('email_address')->getData();
+            if (null !== $honeypotValue) {
+                return $this->contactSuccess();
+            }
             /** @var Contact */
             $contact = $form->getData();
 
@@ -87,9 +92,7 @@ class AppController extends AbstractController
             try {
                 $mailerService->send($mail);
 
-                $this->addFlash('contactSuccess', 'Votre message est envoyé. Vous serez contacté très prochainement.');
-
-                return $this->redirectToRoute('contact');
+                return $this->contactSuccess();
             }
             // Else an error is shown
             catch (TransportExceptionInterface $e) {
@@ -100,5 +103,12 @@ class AppController extends AbstractController
         return $this->render('app/contact.html.twig', [
             'form' => $form->createView(),
         ]);
+    }
+
+    private function contactSuccess(): Response
+    {
+        $this->addFlash('contactSuccess', 'Votre message est envoyé. Vous serez contacté très prochainement.');
+
+        return $this->redirectToRoute('contact');
     }
 }
