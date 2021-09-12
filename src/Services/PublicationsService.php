@@ -291,9 +291,9 @@ class PublicationsService
                     'text' => 'Des Arbres et des Hommes. Editions Edisud, St-Rémy-de-Provence (2017). 368 pages, nombreuses photos couleur. 28.- euros. In : Contributions Suisses à la Dendrologie, 69-70 (2017-2018) : 172-173.',
                 ], [
                     'author' => 'Schmidt, P. A. und Schulz, B.',
-                    'text' => 'Fitschen Gehölzflora. QWuelle & Meyer Verlag, GmbH & Co, Wiebelsheim (2017), 1016 pages, 2500 dessins au trait, 13ème réédition, entièrement retravaillé. 40.- euros. In : Contributions Suisses à la Dendrologie, 69-70 (2017-2018) : 172.',
+                    'text' => 'Fitschen Gehölzflora. Quelle & Meyer Verlag, GmbH & Co, Wiebelsheim (2017), 1016 pages, 2500 dessins au trait, 13ème réédition, entièrement retravaillé. 40.- euros. In : Contributions Suisses à la Dendrologie, 69-70 (2017-2018) : 172.',
                 ], [
-                    'author' => 'Roloiff, A. und Bärtels, A.',
+                    'author' => 'Roloff, A. und Bärtels, A.',
                     'text' => 'Flora der Gehölze : Bestimmung, Eigenschaften, Verwendung. Eugen Ulmer Verlag, Stuttgart (2018). 2650 dessins, 914 pages. 30.- euros. In : Contributions Suisses à la Dendrologie, 69-70 (2017-2018) : 171-172.',
                 ], [
                     'author' => 'Macdonald, H.',
@@ -309,12 +309,12 @@ class PublicationsService
                     'text' => 'Allen der Schweiz. AS Verlag, Ziegelbrücke (CH) (2017). 288 pages, 323 photos couleur. CHF 58.-. In : Contributions Suisses à la Dendrologie, 69-70 (2017-2018) : 164-165.',
                 ], [
                     'author' => 'Bonnet, F.',
-                    'text' => 'Monu8ments végétaux de France : 120 arbres ou sites arborés remarqwuables de France métropolitaine. Rossolis, Burtigny (VD, Suisse) (2017). 288 pages, nombreuses photos couleur. CHF 45.-. In : Contributions Suisses à la Dendrologie, 69-70 (2017-2018) : 163-164.',
+                    'text' => 'Monuments végétaux de France : 120 arbres ou sites arborés remarquables de France métropolitaine. Rossolis, Burtigny (VD, Suisse) (2017). 288 pages, nombreuses photos couleur. CHF 45.-. In : Contributions Suisses à la Dendrologie, 69-70 (2017-2018) : 163-164.',
                 ], [
                     'author' => 'Bärtels, A.',
                     'text' => 'Steinobst : Blüten und Früchte. Ott Verlag, Berne (2017). 312 pages, plus de 200 photos couleur. CHF 47.-. In : Contributions Suisses à la Dendrologie, 69-70 (2017-2018) : 162.',
                 ], [
-                    'author' => '',
+                    'author' => 'Beer, R. & Favre, B.',
                     'text' => 'Arbres remarquables : 41 histoires enracinées à Genève. Etat de Genève (2017). 127 pages, de nombreuses magnifiques photos couleur (photographe : Thierry Parel). www.arbresremarquables.ch 32.- CHF. In : Contributions Suisses à la Dendrologie, 67-68 (2015-2016) : 189-190.',
                 ], [
                     'author' => 'F. Wessoly, L. & Erb, M.',
