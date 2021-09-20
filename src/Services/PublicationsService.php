@@ -338,7 +338,7 @@ class PublicationsService
                     'author' => 'Chautems, J.',
                     'text' => "Guide des arbres extraordinaires de Suisse romande. 40 balades d'énergie (Reliance et soins par la nature). Editions Favre SA, Lausanne (VD) (2012). 213 pages, dont près de la moitié avec des photos couleurs et des cartes. 30.- CHF. In : Contributions Suisses à la Dendrologie, 63-64 (2011-2012) : 116.",
                 ], [
-                    'author' => 'Brosse, K.',
+                    'author' => 'Brosse, J.',
                     'text' => 'Larousse des Arbres. Editions Larousse, Paris (2010). 592 pages, avec des dessins ou des croquis pour une majorité des espèces. 40.- euros. In : Contributions Suisses à la Dendrologie, 63-64 (2011-2012) : 115-116.',
                 ], [
                     'author' => 'Brang, P., Heiri, C. & Bugmann, H. (Red)',
