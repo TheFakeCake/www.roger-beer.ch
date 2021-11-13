@@ -36,18 +36,18 @@ host('production')
 
 desc('Install and build assets locally with Yarn');
 task('build:assets', function () {
-    run('yarn install');
-    run('yarn build');
-})->local();
+    runLocally('yarn install');
+    runLocally('yarn build');
+});
 
 desc('Upload local assets on remote host');
 task('deploy:assets', function () {
-    if (test('[ -d {{assets_build_path}} ]')) {
+    if (testLocally('[ -d {{assets_build_path}} ]')) {
         upload('{{assets_build_path}}', '{{release_path}}/{{assets_build_path}}');
     } else {
         throw new \Exception('Built assets do not exist. Run the build:assets task before deploy:assets.');
     }
-})->local();
+});
 
 task('deploy', [
     'deploy:prepare',
@@ -55,7 +55,6 @@ task('deploy', [
     'build:assets',
     'deploy:assets',
     'deploy:cache:clear',
-    'deploy:cache:warmup',
     'deploy:publish',
 ]);
 

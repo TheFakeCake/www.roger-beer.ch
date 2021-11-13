@@ -3,13 +3,11 @@
     "description": "Site web de Roger Beer - Sequoia & Gardens",
     "type": "project",
     "license": "proprietary",
-    "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
         "php": ">=7.2.5",
         "ext-ctype": "*",
         "ext-iconv": "*",
-        "deployer/deployer": "^7.0",
         "mobiledetect/mobiledetectlib": "^2.8",
         "presta/sitemap-bundle": "^3.0",
         "sensio/framework-extra-bundle": "^6.1",
@@ -33,6 +31,7 @@
         "twig/twig": "^2.12|^3.0"
     },
     "require-dev": {
+        "deployer/dist": "^7.0.0@beta",
         "friendsofphp/php-cs-fixer": "^3.0",
         "symfony/maker-bundle": "^1.29",
         "symfony/stopwatch": "^5.2",
