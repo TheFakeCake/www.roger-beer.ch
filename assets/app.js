@@ -66,3 +66,11 @@ if (contactForm) {
         })
     ;
 }
+
+// Cancel drag event on non draggable elements (workaround for Firefox)
+document
+    .querySelectorAll('[draggable="false"]')
+    .forEach((element) => {
+        element.addEventListener('dragstart', (e) => e.preventDefault());
+    })
+;
