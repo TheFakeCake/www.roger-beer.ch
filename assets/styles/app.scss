@@ -47,6 +47,10 @@
     text-shadow: none;
 }
 
+html {
+    scroll-padding-top: $navbar-logo-height + $navbar-padding-y * 2 + 0.5rem;
+}
+
 body {
     min-height: 100vh;
     padding-top: $navbar-padding-y * 2 + $navbar-logo-height;

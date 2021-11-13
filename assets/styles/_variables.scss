@@ -33,7 +33,7 @@ $navbar-nav-link-padding-x: 1rem;
 // $navbar-brand-font-size:            $font-size-lg !default;
 // Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
 // $nav-link-height:                   $font-size-base * $line-height-base + $nav-link-padding-y * 2 !default;
-$navbar-brand-height: 6rem;
+$navbar-brand-height: $navbar-logo-height;
 $navbar-brand-padding-y: 0;
 // $navbar-brand-margin-end:           1rem !default;
 $navbar-toggler-padding-y: .75rem;
